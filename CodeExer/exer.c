@@ -2,27 +2,22 @@
 
 int main()
 {
-    int a, b, k;
+    // ---------Code Here........
+    int N;
+    scanf("%d", &N);
 
-    scanf("%d %d %d", &a, &b, &k);
-
-    // printf("%d %d %d", a, b, k);
-
-    if (a % k == 0 && b % k == 0){
-        printf("Both");
-    }
-    else if (a % k == 0 && b % k != 0)
+    for (int i = 1; i <= N; i++)
     {
-        printf("Memo");
-    }
-    else if (a % k != 0 && b % k == 0)
-    {
-        printf("Momo");
-    }
-    else
-    {
-        printf("No One");
+        if (i % 5 == 0)
+        {
+            printf("%d Yes\n", i);
+        }
+        else
+        {
+            printf("%d No\n", i);
+        }
     }
 
     return 0;
 }
+// You will be given a positive integer N, you need to print from 1 to N and besides the value, print Yes or No. Print Yes if the value is divisible by 5 and print No otherwise.

@@ -1,2 +1,2 @@
 
-        result = A - B;
+    int A, B;
