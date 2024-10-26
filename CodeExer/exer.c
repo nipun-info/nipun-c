@@ -2,19 +2,27 @@
 
 int main()
 {
-    char x;
-    scanf("%c", &x);
+    int a, b, k;
 
-    if(x >= 'a' && x <= 'z')
+    scanf("%d %d %d", &a, &b, &k);
+
+    // printf("%d %d %d", a, b, k);
+
+    if (a % k == 0 && b % k == 0){
+        printf("Both");
+    }
+    else if (a % k == 0 && b % k != 0)
     {
-        x = x- 32;
+        printf("Memo");
+    }
+    else if (a % k != 0 && b % k == 0)
+    {
+        printf("Momo");
     }
     else
     {
-        x = x + 32;
+        printf("No One");
     }
-
-    printf("%c", x);
 
     return 0;
 }

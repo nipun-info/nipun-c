@@ -1,16 +1,97 @@
 /*
     === Module 01: Basic Syntax, Variable & Data Types ===
-*/ 
+*/
+
+/*
+// MO-1.3:BASIC STRUCTURE OF A C PROGRAM
+- Multiline comment
+- Single line comment
+*/
+
+// documentation section
+/*
+author:name
+date: --:--:--
+code: a basic C Program
+*/
+
+// link section / preprocession
+#include <stdio.h>
+#include <math.h>
+
+// definition section
+#define PI 3.1416
+#define ll long long
+
+// global declaration section
+int N = 100;
+int sum(int x, int y);
+
+// main function section
+int main()
+{
+    // statement
+    return 0;
+}
+
+// MO - 1.4 : RUNNING YOUR FIRST CODE
+// MO -1.5 : DATA TYPE AND VARIABLE
+
+/*
+Format Specifier: Format specifiers are used together with the printf()
+function to tell the compiler what type of data the variable is storing.
+It is basically a placeholder for the variable value.
 
 
+A format specifier starts with a percentage sign %, followed by a character.
 
 
+For example, to output the value of an int variable, use the format specifier %d
+surrounded by double quotes (""), inside the printf() function:
+
+
+short int - %hd
+int - %d
+long int - %ld
+long long - %lld
+char - %c
+float - %f
+double - %lf
+long double - %Lf
+
+
+unsigned int - %u
+unsigned short - %hu
+unsigned long int - lu
+*/
+
+#include <stdio.h>
+int
+main()
+{
+    // Create variables
+    int x = 20;
+    float y = 25.99;
+    char z = 'D';
+
+    // Print variable
+    printf("%d\n", x);
+    printf("%.4f\n", y);
+    printf("%c\n", z);
+    printf("My fav Number is : %d", x);
+    printf("My fav Number %d and my fav char %c and score is %.2f\n", x, z, y);
+
+    // Print Values Without Variables
+    // You can also just print a value without storing it in a variable, as long as
+    // you use the correct format specifier:
+    printf("My score is %d", 34);
+}
 
 /*
     === Module 02: Operators, Conditional Statements ===
-*/ 
-#include<stdio.h>
-#include<math.h>
+*/
+#include <stdio.h>
+#include <math.h>
 
 int main()
 {
@@ -19,102 +100,101 @@ int main()
 
     printf("Hello world\n");
 
-/*
-Formate Specifier:
-    int         -> 4bytes   -%d
-    long int    -> 4bytes   -%ld
-    long long   -> 8bytes   -%lld
-    float       -> 4bytes   -%f
-    double      -> 8bytes   -%lf
-    char        -> 1bytes   -%c
-*/
+    /*
+    Formate Specifier:
+        int         -> 4bytes   -%d
+        long int    -> 4bytes   -%ld
+        long long   -> 8bytes   -%lld
+        float       -> 4bytes   -%f
+        double      -> 8bytes   -%lf
+        char        -> 1bytes   -%c
+    */
 
     // How to take input and show Output
     // Exam-1:
-    long long int a;
+    // long long int a;
 
-    scanf("%lld", &a);
+    // scanf("%lld", &a);
 
-    printf("%lld", a);
+    // printf("%lld", a);
 
     // Exam-2:
-    int a, b, c;
+    // int a, b, c;
 
-    scanf("%d %d %d", &a, &b, &c);
+    // scanf("%d %d %d", &a, &b, &c);
 
-    printf("%d %d %d", a, b, c);
+    // printf("%d %d %d", a, b, c);
 
     // Exam-3:
     int a, b, c;
 
-    scanf("%d %d %d", &a, &b, &c);
+    // scanf("%d %d %d", &a, &b, &c);
 
-    printf("a = %d  b = %d c = %d", a, b, c);
+    // printf("a = %d  b = %d c = %d", a, b, c);
 
     // Exam-4:
     int b, c;
     short int a = 7;
     char ch;
 
-    scanf("%hd %d %d %c", &a, &b, &c, &ch);
+    // scanf("%hd %d %d %c", &a, &b, &c, &ch);
 
-    printf("a = %hd b = %d c = %d ch = %c", a, b, c, ch);
+    // printf("a = %hd b = %d c = %d ch = %c", a, b, c, ch);
 
     // ------------------------------
 
     // MO-2: Arithmetic Operator
-     printf("%d\n", 5 + 3);
-    printf("%d\n", 5 / 3);
-    printf("%d\n", 5 % 3);
-    printf("%f\n", 5 / 3.0);
+    // printf("%d\n", 5 + 3);
+    // printf("%d\n", 5 / 3);
+    // printf("%d\n", 5 % 3);
+    // printf("%f\n", 5 / 3.0);
 
     // ------------------------------
 
     int a = 15, b = 3;
-    
-    printf("%d\n", a + b);
-    printf("%d\n", a - b);
-    printf("%d\n", a * b);
 
-    int result = a + b;
+    // printf("%d\n", a + b);
+    // printf("%d\n", a - b);
+    // printf("%d\n", a * b);
 
-    printf("Total = %d\n", result);
+    // int result = a + b;
+
+    // printf("Total = %d\n", result);
 
     // ------------------------------
 
     int x = 100000, y = 100000;
     double z = 100000;
 
-    long long result2 = x * z;
-    long long result3 = 1LL * x * y;    // alernative way
+    // long long result2 = x * z;
+    // long long result3 = 1LL * x * y; // alernative way
 
-    printf("x + y = %d\n", x + y);
-    printf("x - y = %d\n", x - y);
-    printf("x * y = %d\n", x * y);  //wrong output (limition)
-    printf("x * z = %lld\n", result2);  
-    printf("x * y = %lld\n", result3); 
+    // printf("x + y = %d\n", x + y);
+    // printf("x - y = %d\n", x - y);
+    // printf("x * y = %d\n", x * y); // wrong output (limition)
+    // printf("x * z = %lld\n", result2);
+    // printf("x * y = %lld\n", result3);
 
-    // ------------------------------   
+    // ------------------------------
 
     int a, b;
 
-   scanf("%d %d", &a, &b);
+    // scanf("%d %d", &a, &b);
 
-   printf("%d\n", a + b);
-   printf("%d\n", a - b);
-   printf("%d\n", a * b);
+    // printf("%d\n", a + b);
+    // printf("%d\n", a - b);
+    // printf("%d\n", a * b);
 
-
-    return 0;
+    // return 0;
 }
 
-// MO-2.3: Assignment Operators and Increment, Decrement Operators 
+// MO-2.3: Assignment Operators and Increment, Decrement Operators
 #include <stdio.h>
 
-int main ()
+int main()
 {
     int a = 50;
-    
+
     a += 10;
     a *= 10;
     a -= 10;
@@ -142,11 +222,11 @@ int main ()
     return 0;
 }
 
-// MO-2.4: Relational Operators 
+// MO-2.4: Relational Operators
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     // int a = 5, b = 5;
     // int a = 5, b = 58;
@@ -163,14 +243,13 @@ int main ()
     bool flag = a >= b;
 
     printf("Flag = %d", flag);
-    
 }
 
-// MO-2.5: Logical Operators 
+// MO-2.5: Logical Operators
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     // bool result = (2 < 5) && (5 > 3);
     // bool result = (6 < 5) || (5 > 7) || (5 < 4);
@@ -186,13 +265,13 @@ int main ()
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     int a = 5;
 
     printf("Before if\n");
 
-    if(a == 7)
+    if (a == 7)
     {
         printf("Inside if\n");
     }
@@ -201,11 +280,11 @@ int main ()
 
     // ------------------------------
 
-    int a  = 9;
+    int a = 9;
 
-    if(a < 10)
+    if (a < 10)
     {
-        printf("inside = %d\n", a +=100);
+        printf("inside = %d\n", a += 100);
     }
     printf("%d\n", a);
 
@@ -216,11 +295,11 @@ int main ()
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     int price = 30;
 
-    if(price <= 50)
+    if (price <= 50)
     {
         printf("Buy 4 eggs\n");
         printf("Take %d Taka Back", 50 - price);
@@ -230,33 +309,37 @@ int main ()
         printf("Buy 2 eggs");
     }
 
-
     return 0;
 }
 
-// MO-2.8: If Else Ladder 
+// MO-2.8: If Else Ladder
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     int a;
 
     scanf("%d", &a);
 
-    if(a < 5) {
+    if (a < 5)
+    {
         printf("a is less than 5");
     }
-    else if (a < 10){
+    else if (a < 10)
+    {
         printf("a is less than 10");
     }
-    else if (a < 20){
+    else if (a < 20)
+    {
         printf("a is less than 20");
     }
-    else if (a < 50){
+    else if (a < 50)
+    {
         printf("a is less than 50");
     }
-    else {
+    else
+    {
         printf("A is less then 100");
     }
 
@@ -267,26 +350,27 @@ int main ()
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     int tourDays = 1;
 
-    if(tourDays == 2)
+    if (tourDays == 2)
     {
         bool isBoatAvailable = false;
 
-        if(isBoatAvailable)
+        if (isBoatAvailable)
         {
             printf("Going To Taguar Hour\n");
         }
-        else {
+        else
+        {
             printf("Going to Shrimangal\n");
         }
     }
-    else if(tourDays == 4)
+    else if (tourDays == 4)
     {
         bool isShipAvailable = true;
-        if(isShipAvailable)
+        if (isShipAvailable)
         {
             printf("Going to saint martin\n");
         }
@@ -295,7 +379,8 @@ int main ()
             printf("Going to Cox Bazar\n");
         }
     }
-    else {
+    else
+    {
         printf("Ghore boshe thako");
     }
 
@@ -306,46 +391,45 @@ int main ()
 #include <stdio.h>
 #include <stdbool.h>
 
-int main ()
+int main()
 {
     int day = 3;
 
-    switch(day)
+    switch (day)
     {
-        case 1:
-            printf("saturday\n");
-            break;
-        
-        case 2:
-            printf("Sunday\n");
-            break;
-        
-        case 3:
-            printf("Monday\n");
-            break;
-        
-        case 4:
-            printf("Tuesday\n");
-            break;
-        
-        case 5:
-            printf("Wednessday\n");
-            break;
-        
-        case 6:
-            printf("Thursday\n");
-            break;
-        
-        case 7:
-            printf("Friday\n");
-            break;
-        default:
-            printf("Wrong day\n");
+    case 1:
+        printf("saturday\n");
+        break;
+
+    case 2:
+        printf("Sunday\n");
+        break;
+
+    case 3:
+        printf("Monday\n");
+        break;
+
+    case 4:
+        printf("Tuesday\n");
+        break;
+
+    case 5:
+        printf("Wednessday\n");
+        break;
+
+    case 6:
+        printf("Thursday\n");
+        break;
+
+    case 7:
+        printf("Friday\n");
+        break;
+    default:
+        printf("Wrong day\n");
     }
 
     return 0;
 }
-
 
 // ================== Module 03: Loop ===============
 
@@ -358,15 +442,13 @@ int main()
     // For Loop
     printf("Before For Loop\n");
 
-    for(int i = 1; i <= 3; i++)
+    for (int i = 1; i <= 3; i++)
     // for(int i = 3; i >= 1; i--)
     {
         printf("inside For Loop\n and Value of i = %d\n", i);
     }
 
     printf("After For Loop\n");
-
-   
 
     return 0;
 }
@@ -381,7 +463,7 @@ int main()
 
     int i = 0;
 
-    while(i < 5)
+    while (i < 5)
     {
         printf("Inside while loop i = %d\n", i);
         i++;
@@ -400,10 +482,11 @@ int main()
 {
     int i = 1;
 
-    do{
+    do
+    {
         printf("Inside do while %d\n", i);
         i++;
-    } while(i <= 5);
+    } while (i <= 5);
 
     return 0;
 }
@@ -414,15 +497,14 @@ int main()
 
 int main()
 {
-    for(int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
-        for(int j = 0; j < 5; j++)
+        for (int j = 0; j < 5; j++)
         {
             printf("* ");
         }
         printf("\n");
     }
-    
 
     return 0;
 }
@@ -433,21 +515,19 @@ int main()
 
 int main()
 {
-    for(int i = 1; i <= 3; i++)
+    for (int i = 1; i <= 3; i++)
     {
-        for(int j = 1; j <= 5; j++)
+        for (int j = 1; j <= 5; j++)
         {
             printf("%d hour, %d minute\n", i, j);
         }
         printf("\n");
     }
-    
+
     return 0;
 }
 
 // ******************* Ascil Table ********************
-
-
 
 // ******************* Working with loops ********************
 #include <stdio.h>
@@ -459,11 +539,11 @@ int main()
 
     // int number = 1;
 
-    for(int i = 1; i <= n; i++ )
+    for (int i = 1; i <= n; i++)
     {
         printf("%d\n", i);
     }
-    
+
     return 0;
 }
 
@@ -475,11 +555,11 @@ int main()
 {
     int n = 10;
 
-    for(int i = n; i >= 1; i-- )
+    for (int i = n; i >= 1; i--)
     {
         printf("%d\n", i);
     }
-    
+
     return 0;
 }
 
@@ -490,11 +570,11 @@ int main()
 {
     // Print Z to A
 
-    for(char i = 'Z'; i >= 'A'; i-- )
+    for (char i = 'Z'; i >= 'A'; i--)
     {
         printf("%c\n", i);
     }
-    
+
     return 0;
 }
 
@@ -509,16 +589,17 @@ int main()
 
     int sum = 0;
 
-    for(int i = 1; i <= n; i++){
-        printf("%d + %d = ", sum , i);
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%d + %d = ", sum, i);
 
-        sum +=i;
+        sum += i;
 
         printf("%d\n", sum);
     }
 
     printf("Result = %d", sum);
-    
+
     return 0;
 }
 
@@ -530,21 +611,23 @@ int main()
     int n;
     scanf("%d", &n);
 
-    for(int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        if( i % 2 == 0){
+        if (i % 2 == 0)
+        {
             printf("%d Even\n", i);
         }
-        else {
+        else
+        {
             printf("%d Odd\n", i);
         }
     }
-    
+
     return 0;
 }
 
-// CodePloblem-: You will be given a positive integer N, you need to print 
-// from 1 to N and besides the value, print Yes or No. 
+// CodePloblem-: You will be given a positive integer N, you need to print
+// from 1 to N and besides the value, print Yes or No.
 // Print Yes if the value is divisible by 5 and print No otherwise.
 #include <stdio.h>
 
@@ -553,48 +636,42 @@ int main()
     int n;
     scanf("%d", &n);
 
-    for(int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        if( i % 5 == 0){
+        if (i % 5 == 0)
+        {
             printf("%d Yes\n", i);
         }
-        else {
+        else
+        {
             printf("%d No\n", i);
         }
     }
-    
+
     return 0;
 }
-
-
 
 // ?Dont understant
 #include <stdio.h>
 
 int main()
 {
-    int i =0, j =0;
-    for(j=1; j<=5; j++)
+    int i = 0, j = 0;
+    for (j = 1; j <= 5; j++)
     {
         i++;
     }
     printf("%d", j);
-    
+
     return 0;
 }
 
-
-
-
-
 // ******************* Infinity loop ********************
 
-
-
 // ******************* loop Conseptual 02 ********************
-// #problem-1: Given a number N, Print all even numbers 
+// #problem-1: Given a number N, Print all even numbers
 // between 1 and N inclusive in separate lines.
-// Output: Print the answer according to the required above. 
+// Output: Print the answer according to the required above.
 // if there are no even number print -1
 #include <stdio.h>
 
@@ -602,18 +679,18 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    
+
     // int i = 1;
     int count = 0;
-    for(int i = 1; i <=n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        if(i % 2 == 0)
+        if (i % 2 == 0)
         {
-            count = count+1;
+            count = count + 1;
             printf("%d\n", i);
         }
     }
-    if(count == 0)
+    if (count == 0)
     {
         printf("-1\n");
     }
@@ -635,13 +712,13 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    
-    int i = 1; //outer
+
+    int i = 1; // outer
     int j = 1; // inner
 
-    for(i = 1; i <= n; i++)
+    for (i = 1; i <= n; i++)
     {
-        for(j = 1; j <= n - i + 1; j++)
+        for (j = 1; j <= n - i + 1; j++)
         {
             printf("* ");
         }
