@@ -4,22 +4,12 @@ int main()
 {
     // ---------Code Here........
     int N;
-    scanf("%d", &N);
-    // printf("%d", N); 
-    
+    scanf("%d", N);
 
-    // for(int i = 5; i >= 1; i--){
-    //     // printf("Hello %d\n", i);
-    // }
-
-    int i = 10;
-
-    while(i >= 1)
+    for(int i = 1; i < 6; i++)
     {
-        printf("Hello %d\n", i);
-        i--;
+        printf("%d", i);
     }
-
     
 
     return 0;

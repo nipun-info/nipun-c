@@ -656,35 +656,6 @@ int main()
 
 
 
-/************** Week-02 ***************
-       Module 6.5: Practice Day01
-**************************************/
-/*
-Codeforces Problem-1: Given a lowercase alphabet character. You have to print the next character in 
-the alphabet.
-*/
-
-#include <stdio.h>
-#include <limits.h>
-
-int main()
-{
-    char ch;
-
-    scanf("%c", &ch);
-
-    if (ch >= 'a' && ch <= 'y')
-    {
-        printf("%c", ch + 1);
-    }
-    else if (ch == 'z')
-    {
-        printf("a");
-    }
-    
-    return 0;
-}
-
 
 
 
