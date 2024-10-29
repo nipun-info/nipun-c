@@ -665,6 +665,14 @@ int main()
 /************** Week-02 ***************
     Module 07: Introduction to Array
 ***************************************/
+// 7.4: Initializing an Accessing an Array
+
+int arr[5] = {1, 55, 8 ,9, 77};
+int arr[] = {2, 55 ,99 ,8, 105};
+int arr[5] = {0};
+
+
+
 // -------- Example-1:
 #include <stdio.h>
 
