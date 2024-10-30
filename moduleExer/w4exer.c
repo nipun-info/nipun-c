@@ -1,13 +1,10 @@
 /*************************************
       Week-04: Module 13: Frequency Array
-        Array Operation
 **************************************/
 
 // ===== 13.2: Frequency Array in C  =======
 
-
 // ===== 13.3: How To use Frequency Array =======
-
 
 // ===== 13.4: Implementing Frequency Array  =======
 #include <stdio.h>
@@ -65,7 +62,6 @@ int main()
     return 0;
 }
 
-
 // ===== 13.5: Unique Characters in A string  =======
 #include <stdio.h>
 #include <string.h>
@@ -111,12 +107,11 @@ int main()
     return 0;
 }
 
-
 // ===== 13.6: Frequency Array Problem  =======
 /*
     https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/V
     Given 2 numbers N, M and and array A of N numbers. For every number 1 to M, print how many times this number appears in this array.
-*/ 
+*/
 #include <stdio.h>
 #include <string.h>
 
@@ -131,14 +126,14 @@ int main()
 
     int a[n + 5];
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
 
         f[a[i]] += 1;
     }
 
-    for(int i = 1; i <=m; i++)
+    for (int i = 1; i <= m; i++)
     {
         printf("%d\n", f[i]);
     }
@@ -146,15 +141,11 @@ int main()
     return 0;
 }
 
-
-
 /*************************************
       Week-04: Module 14: 2D Array
-        Array Operation
 **************************************/
 
 // ===== 14.2: Array Dimension  =======
-
 
 // ===== 14.3: Declaration, Initialization & access  =======
 #include <stdio.h>
@@ -166,11 +157,11 @@ int main()
 {
     // ---------Code Here........
     // int arr[3][5];
-    int arr[3][3] = {{1,2,3}, {4,5,6}, {7,8,9}};
+    int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-    for(int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
-        for(int j = 0; j < 5; j++)
+        for (int j = 0; j < 5; j++)
         {
             printf("i = %d, j = %d, address = %d || ", i, j, arr[i][j]);
         }
@@ -230,12 +221,11 @@ int main()
     return 0;
 }
 
-
 // ===== 14.5: Square, Diagonal, Scalar Matrix =======
 /*
 Square matrix: A square matrix is a matrix that has an equal number of rows and columns.
-1 3 4 9 
-6 4 2 5 
+1 3 4 9
+6 4 2 5
 9 2 5 2
 8 5 1 0
 
@@ -255,7 +245,7 @@ Scalar Matrix:
 0 0 1
 
 
-*/ 
+*/
 #include <stdio.h>
 #include <string.h>
 
@@ -321,10 +311,7 @@ int main()
     return 0;
 }
 
-
 // ===== 14.6: Checking a Scalar Matrix  =======
-
-
 
 // ===== 14.7: Matrix CF  =======
 // https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/T
@@ -372,3 +359,172 @@ int main()
 
     return 0;
 }
+
+/*************************************
+      Week-04: Conceptual Session
+**************************************/
+
+// ---------Code Here......: Alphabet character frequency
+#include <stdio.h>
+
+int main()
+{
+
+    int n;
+
+    scanf("%d", &n);
+    char s[n + 5];
+    scanf("%s", s);
+
+    int freq[26] = {0};
+    for (int i = 0; i < n; i++)
+    {
+        // printf("%c ", s[i]);
+        int index = s[i] - 'a';
+        freq[index]++;
+        // printf("%d ", index);
+    }
+
+    for (int i = 0; i < 26; i++)
+    {
+        if (freq[i] != 0)
+            printf("%c %d\n", i + 'a', freq[i]);
+    }
+
+    return 0;
+}
+
+// -------Code Here....: Value wih max occurance
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+
+    scanf("%d", &n);
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    int freq[100005] = {0};
+
+    for (int i = 0; i < n; i++)
+    {
+        freq[a[i]]++;
+    }
+
+    // for (int i = 0; i < 10; i++)
+    // {
+    //     printf("%d -> %d\n", i, freq[i]);
+    // }
+
+    int val = -1;
+    int max = -1;
+
+    for (int i = 0; i < 100005; i++)
+    {
+        if (freq[i] > max)
+        {
+            max = freq[i];
+            val = i;
+        }
+    }
+
+    printf("%d is Maximum Value -> %d Times", val, max);
+
+    return 0;
+}
+
+// ---------Code Here......: 2D Array
+#include <stdio.h>
+
+int main()
+{  
+    int r, c;
+    scanf("%d %d", &r, &c);
+    int a[r][c];
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+// ---------Code Here......: Sum Of 2D Array
+#include <stdio.h>
+
+int main()
+{
+
+    int r, c;
+    scanf("%d %d", &r, &c);
+    int a[r][c];
+    int b[r][c];
+    int sum[r][c];
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            sum[i][j] = a[i][j] + b[i][j];
+            printf(" %d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
+    // for (int i = 0; i < r; i++)
+    // {
+    //     for (int j = 0; j < c; j++)
+    //     {
+    //         printf(" %d ", sum[i][j]);
+    //     }
+    //     printf("\n");
+    // }
+
+    return 0;
+}
+
+/*************************************
+      MO - 14.5: Practice Day -1
+**************************************/
+
+
+
+
+
+
+
+
