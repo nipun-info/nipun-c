@@ -1,6 +1,6 @@
 
 /*
-Problem-13: Given a letter X. If the letter is lowercase print the letter after converting it from lowercase letter to uppercase letter. Otherwise print the letter after converting it from uppercase letter to lowercase letter
+Char: Given a letter X. If the letter is lowercase print the letter after converting it from lowercase letter to uppercase letter. Otherwise print the letter after converting it from uppercase letter to lowercase letter
 https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/N
 */ 
 #include <stdio.h>
@@ -78,7 +78,7 @@ int main()
 }
 
 /*
-Codeforces Problem-15(Mathematical Expression):
+Codeforces Problem-(Mathematical Expression):
 Given a mathematical expression. The expression will be one of the following expressions:
 https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/W
 
@@ -122,9 +122,8 @@ int main()
 }
 
 /*
-Codeforces Problem-16(Memo and Momo): 
-https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/B
-Memo and Momo are playing a game. Memo will choose a positive number a and Momo will choose a positive number b. Your task is to tell them who will win according to the following rules:
+    Codeforces Problem-(Memo and Momo): https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/B
+    Memo and Momo are playing a game. Memo will choose a positive number a and Momo will choose a positive number b. Your task is to tell them who will win according to the following rules:
 */ 
 #include <stdio.h>
 
@@ -154,3 +153,54 @@ int main()
 
     return 0;
 }
+
+/*
+    Codeforces Problem-(Sort Numbers): https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/T
+    Given three numbers A, B, C. Print these numbers in ascending order followed by a blank line and then the values in the sequence as they were read.
+*/ 
+#include <stdio.h>
+
+int main()
+{
+    int a, b, c;
+
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a <= b && a <= c)
+    {
+        // a is min
+        if (b <= c)
+            // c is max
+            printf("%d\n%d\n%d\n", a, b, c);
+        else
+            // b is max
+            printf("%d\n%d\n%d\n", a, c, b);
+    }
+    else if (b <= a && b <= c)
+    {
+        // b min
+        if (a <= c)
+            // c max
+            printf("%d\n%d\n%d\n", b, a, c);
+        else
+            // a max
+            printf("%d\n%d\n%d\n", b, c, a);
+    }
+    else
+    {
+        // c min
+        if (a <= b)
+            // b max
+            printf("%d\n%d\n%d\n", c, a, b);
+        else
+            // a max
+            printf("%d\n%d\n%d\n", c, b, a);
+    }
+
+    printf("\n");
+
+    printf("%d\n%d\n%d\n", a, b, c);
+
+    return 0;
+}
+
