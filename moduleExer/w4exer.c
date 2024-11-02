@@ -106,6 +106,45 @@ int main()
 
     return 0;
 }
+// ------- recape char str
+#include <stdio.h>
+
+int main()
+{
+    char str[50] = "md nasihul islam";
+
+    int f[26] = {0};
+
+    int len = strlen(str);
+
+    for (int i = 0; i < len; i++)
+    {
+        char ch = str[i];
+
+        int index = ch - 'a';
+
+        // printf("%d %c\n", index, ch);
+
+        f[index] = 1;
+    }
+
+    int cnt = 0;
+
+    for (int i = 0; i < 26; i++)
+    {
+        // printf("%d %d %c\n", f[i], i, i + 'a');
+        cnt += f[i];
+
+        if (f[i] == 1)
+        {
+            printf("%c %d\n", i + 'a', f[i]);
+        }
+    }
+
+    printf("%d\n", cnt);
+
+    return 0;
+}
 
 // ===== 13.6: Frequency Array Problem  =======
 /*
@@ -135,6 +174,7 @@ int main()
 
     for (int i = 1; i <= m; i++)
     {
+        // printf("%d -> %d\n", i, f[i]);
         printf("%d\n", f[i]);
     }
 
@@ -150,8 +190,6 @@ int main()
 // ===== 14.3: Declaration, Initialization & access  =======
 #include <stdio.h>
 #include <string.h>
-
-int f[100000];
 
 int main()
 {
@@ -173,8 +211,6 @@ int main()
 // ===== 14.4: Input Output of 2D Matrix  =======
 #include <stdio.h>
 #include <string.h>
-
-int f[100000];
 
 int main()
 {
@@ -311,6 +347,20 @@ int main()
     return 0;
 }
 
+/*
+Explain the code: https://chatgpt.com/c/67233535-191c-8007-b9b4-61acfe3224e4
+
+Certainly! This code checks if a given 𝑛 × 𝑛 matrix is a scalar matrix. A scalar matrix is a square matrix in which all the diagonal elements are the same and all other elements are zero.
+
+
+(0,0), (0,1), (0,2)
+
+(1,0), (1,1), (1,2)
+
+(2,0), (2,1), (2,2)
+
+*/ 
+
 // ===== 14.6: Checking a Scalar Matrix  =======
 
 // ===== 14.7: Matrix CF  =======
@@ -364,7 +414,12 @@ int main()
       Week-04: Conceptual Session
 **************************************/
 
-// ---------Code Here......: Alphabet character frequency
+/*
+Alphabet character frequency
+Details Explain this link: 
+https://chatgpt.com/c/67235d6b-29e8-8007-9ae7-ddee5c2f1fb6
+
+*/ 
 #include <stdio.h>
 
 int main()
@@ -505,21 +560,479 @@ int main()
         printf("\n");
     }
 
-    // for (int i = 0; i < r; i++)
+
+    return 0;
+}
+
+/*
+main diagonal => i == j || Secondary Diagonal => i + j = n - 1 
+*/ 
+
+/*************************************
+      MO - 14.5: Practice Day -1
+**************************************/
+
+/*
+    Count Letters: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/J
+    Given a string S. Determine how many times does each letter occurred in S.
+*/ 
+
+
+
+/*
+    Search In Matrix: https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/S
+    Given two numbers N and M , a 2D array of size N * M and a number X. Determine whether X exists in the 2D array A or not.
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n, m;
+    scanf("%d %d", &n, &m);
+
+    int arr[n][m];
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    int x;
+    scanf("%d", &x);
+    
+    int found = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            if (arr[i][j] == x)
+            {
+                found = 1;
+                break;
+            }
+        }
+        if (found)
+        {
+            break;
+        }
+    }
+
+    if (found)
+    {
+        printf("will not  take number\n");
+    }
+    else
+    {
+        printf("will take number\n");
+    }
+
+    return 0;
+}
+
+
+/*
+    Matrix: https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/T
+    Given a number N and a 2D array A of size N * N. Print the absolute difference between the summation of its two diagonals (primary diagonal and secondary diagonal).
+*/ 
+
+
+
+/*************************************
+    MO - 15: Dynamic Array & Pointer
+**************************************/
+
+// ===== 15.2: Pointers In C  =======
+#include <stdio.h>
+
+int main()
+{
+    int a = 5;
+
+    int *b = &a;
+
+    printf("%d \n", a);
+
+    // printf("%d \n", &a);
+
+    // printf("%d \n", &b);
+
+    // printf("%d \n", b);
+
+    // printf("%d \n", *b);
+    
+    *b = 6;
+
+    int val = *b;
+
+    printf("%d\n", val);
+
+    printf("%d \n", a);
+    
+
+    return 0;
+}
+
+
+
+// ===== 15.3: Working with Pointers  =======
+#include <stdio.h>
+
+int main()
+{
+    // -----Swap two value with pointer
+    int a = 5, b = 6;
+
+    int *x = &a, *y = &b;
+
+    printf("----- Before swaping\n");
+
+    printf("%d %d\n", a, b);
+
+    int temp = *x;
+    *x = *y;
+
+    *y = temp;
+
+    printf("----- After swaping\n");
+    printf("%d %d\n", a, b);
+
+    return 0;
+}
+
+
+// ===== 15.4: Pointers & Array  =======
+#include <stdio.h>
+
+int main()
+{
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    int *p = arr;
+
+    printf("%d %d %d %d\n", p, &arr, &arr[1], &arr[2]);
+
+    printf("%d %d \n", (p+1), (p+3));
+
+    char a = 'a';
+
+    char *x = &a;
+
+    printf("%d %d\n", x, x + 1);
+
+    return 0;
+}
+
+// -----------
+#include <stdio.h>
+
+int main()
+{
+    int arr[5] = {1, 2, 3, 4, 5};
+
+    int *p = arr;
+
+    printf("address: %d %d - %d %d\n", &arr[0], p, &arr[1], p + 1);
+    printf("value: %d %d - %d %d\n", arr[0], *p, arr[1], *p + 1);
+
+    return 0;
+}
+
+
+
+// ===== 15.5: Dynamic Array in C  =======
+
+
+
+// ===== 15.6: Implementing Dynamic Array  =======
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *arr = (int *)malloc(5 * sizeof(int));
+    for (int i = 0; i < 5; i++)
+    {
+        arr[i] = i + 1;
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    int *temp = arr;
+
+    arr = (int *)realloc(arr, 10 * sizeof(int));
+
+    if (arr == NULL)
+    {
+        arr = temp;
+    }
+
+    for (int i = 5; i < 10; i++)
+    {
+        arr[i] = 100;
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    free(arr);
+
+    return 0;
+}
+
+/*
+details in example:
+https://chatgpt.com/c/6724b2bc-db4c-8007-a096-780032392602
+
+*/ 
+
+
+// ===== 15.7: Pointers Of Pointer  =======
+
+
+
+/***********************
+ ******* Week04 ********
+ ***** Concept-02 ******
+ **********************/ 
+
+// ----------- Example-1:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x = 10;
+
+    int *p = &x;
+
+    printf("x = %d \n", x);
+    printf("p = %d\n", *p);
+
+    *p = 100;
+
+    printf("x = %d \n", x);
+    printf("p = %d\n", *p);
+
+    printf("p er size = %d \n", sizeof(p));
+
+    double a = 10.56;
+    double *ptr = &a;
+
+    printf("a = %0.2lf\n", a);
+    printf("ptr = %0.2lf\n", *ptr);
+
+    printf("ptr er size = %d \n", sizeof(ptr));
+
+    char ch = 'A';
+    char *pch = &ch;
+
+    printf("ch = %c \n", ch);
+    printf("pch = %c \n", *pch);
+
+    printf("pch er size = %d \n", sizeof(pch));
+
+}
+
+// ----------- Example-2:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //    MCQ Round
+    int x = 10;
+    int *p = &x;
+
+    int y = 20;
+
+    *p = ++y;
+
+    x++;
+
+    printf("x = %d || address = %d \n", x, &x);
+    printf("p = %d || address = %d \n", *p, p);
+    printf("y = %d || address = %d \n", y, &y);
+
+    return 0;
+}
+
+// ----------- Example-3:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //    MCQ Round
+    int x, y, z;
+    x = 10, y = 20, z = 30;
+
+    int *p, *q;
+
+    p = &x;
+    q = &y;
+
+    y = 34;
+
+    p = q;
+
+    printf("x = %d || address = %d \n", x, &x);
+    printf("y = %d || address = %d \n", y, &y);
+    printf("z = %d || address = %d \n", z, &z);
+    printf("p = %d || address = %d \n", *p, p);
+    printf("q = %d || address = %d \n", *q, q);
+
+    return 0;
+}
+
+// ----------- Example-4:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    
+    // Static array:
+    // int n;
+    // int *ptr = &n;
+
+    // // scanf("%d", &n);
+    // scanf("%d", ptr);
+
+    // int arr[n];
+
+    // for(int i = 0; i < n; i++)
     // {
-    //     for (int j = 0; j < c; j++)
-    //     {
-    //         printf(" %d ", sum[i][j]);
-    //     }
-    //     printf("\n");
+    //     scanf("%d", &arr[i]);
+    // }
+
+    // for(int i = 0; i < n; i++)
+    // {
+    //     printf("%d ", arr[i]);
     // }
 
     return 0;
 }
 
-/*************************************
-      MO - 14.5: Practice Day -1
-**************************************/
+// ----------- Example-4: dynamic array and sum
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    int *ptr = &n;
+
+    scanf("%d", ptr);
+
+    // int arr[n];
+    int *arr;
+
+    int sum = 0;
+
+    // arr = (int *) malloc(n * sizeof(int));
+    arr = (int *)calloc(n, sizeof(int));
+
+    arr = realloc(arr, (n + 5) * sizeof(int));
+
+    if (arr == NULL)
+    {
+        printf("It is not possible to realloc");
+    }
+
+    for (int i = 0; i < n + 5; i++)
+    {
+        scanf("%d", arr + i);
+    }
+
+    for (int i = 0; i < n + 5; i++)
+    {
+        printf("%d ", *(arr + i));
+        sum += *(arr + i);
+    }
+
+    printf("\nSum = %d\n", sum);
+
+    free(arr);
+
+    return 0;
+}
+
+
+/***********************
+ ******* Week04 ********
+ *** Practice Day-02 ***
+ **********************/ 
+
+// 1. Add: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/A
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *x, *y;
+
+    x = (int *)calloc(1, sizeof(int));
+    y = (int *)calloc(1, sizeof(int));
+
+    scanf("%d %d", x, y);
+
+    int sum;
+    sum = *x + *y;
+
+    printf("%d", sum);
+
+    return 0;
+}
+
+// 2. Swap: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/E
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *x, *y;
+
+    x = (int *)calloc(1, sizeof(int));
+    y = (int *)calloc(1, sizeof(int));
+
+    scanf("%d %d", x, y);
+
+    int temp = *x;
+    *x = *y;
+
+    *y = temp;
+
+    printf("%d %d\n", *x, *y);
+
+    return 0;
+}
+
+// 3. Min & Max: https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/K
+
+
+
+
+
+
+
+
+/***********************
+ ******* Week04 ********
+ ***** Assignment-3 ****
+ problem Explain link: https://chatgpt.com/c/67258970-fce0-8007-bf09-748f9cee2bf0
+ **********************/ 
+
 
 
 

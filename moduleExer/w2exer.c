@@ -902,3 +902,384 @@ int main()
     return 0;
 }    
 
+
+
+/***********************
+ ******* Week02 ********
+ **** Conceptual-01 ****
+ **********************/ 
+//--------Problem-1:
+#include <stdio.h>
+
+int main()
+{
+    int holiday;
+    scanf("%d", &holiday);
+
+    if (holiday >= 3)
+    {
+        printf("Cox's Bazar\n");
+
+        if (holiday > 3)
+        {
+            printf("Go to Saint Martin\n");
+        }
+        else
+        {
+            printf("Cox's Bazar ei thakbo\n");
+        }
+    }
+    else if (holiday >= 2)
+    {
+        printf("Sylhet\n");
+    }
+    else
+    {
+        printf("Stay Home");
+    }
+
+    return 0;
+}
+
+/**********Lucky Numbers*************
+   Codeforces Problem-4: https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/I
+   A number of two digits is lucky if one of its digits is divisible by the other.
+   For example, 39, 82, and 55 are lucky, while 79 and 43 are not.
+   Given a number between 10 and 99, determine whether it is lucky or not.
+   
+   Input
+   Only one line containing a single number N (10≤N≤99).
+   
+   Output
+   Print "YES" if the given number is lucky, otherwise print "NO".
+
+***********************/
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+    int n;
+
+    scanf("%d", &n);
+
+    int first_digit = n / 10;
+    int second_digit = n % 10;
+
+    if(first_digit % second_digit == 0 || second_digit % first_digit == 0)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+    
+    return 0;
+}
+
+
+/********** Fixed Password *************
+   Codeforces Problem-5: https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/D
+   Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password 
+   is incorrect otherwise, print "Correct" and terminate the program.
+   Note: The "Correct" password is the number 1999.
+   
+   Output
+   Print "Wrong" if the password is typed wrong otherwise, print "Correct" if the password is 
+   typed correctly.
+
+***********************/
+#include <stdio.h>
+
+int main()
+{
+    int n;
+
+    while (scanf("%d", &n) != EOF)
+    {
+        if (n == 1999)
+        {
+            printf("Correct\n");
+            break;
+        }
+        else
+        {
+            printf("Wrong\n");
+        }
+    }
+
+    return 0;
+}
+
+/********** Max *************
+   Codeforces Problem-5: https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/E
+   Given a number N, and N numbers, find maximum number in these N numbers.
+
+Input
+First line contains a number N (1 ≤ N ≤ 103).
+
+Second line contains N numbers Xi (0 ≤ Xi ≤ 109).
+
+Output
+Print the maximum number.
+   
+***********************/
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int maxium_value = INT_MIN;
+    // printf("%d\n", maxium_value);
+
+    for(int i = 0; i < n; i++)
+    {
+        int x; 
+        scanf("%d", &x);
+
+        // printf("%d %d\n", maxium_value, x);
+
+        if(maxium_value < x) {
+            maxium_value = x;
+        }
+        
+        // printf("latest: %d\n", maxium_value);
+    }
+
+    printf("%d\n", maxium_value);
+   
+    return 0;
+}
+
+
+
+
+
+
+
+
+/***********************
+ ******* Week02 ********
+ **** Conceptual-02 ****
+ **********************/ 
+
+
+
+
+
+
+/***********************
+ *** Week02: MO- 6.5 ***
+ *** Practice Day-01 ***
+ **********************/ 
+/*
+    Given a lowercase alphabet character. You have to print the next character in the alphabet.
+*/
+
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+    char ch;
+
+    scanf("%c", &ch);
+
+    if (ch == 'z')
+    {
+        printf("a");
+    }
+    else
+    {
+        printf("%c", ch + 1);
+    }
+    
+    return 0;
+}
+
+/*
+    Ali Baba: One day, Ali Baba had an easy puzzle that he couldn't solve. The puzzle consisted of 4 numbers and his task was to check whether he could get the fourth number using arithmetic operators (+,−,×) between the other three numbers; so that each operator is used only once.
+*/ 
+#include <stdio.h>
+
+int main()
+{
+    // ---------Code Here ........
+
+    // not solve this problem
+    
+
+    return 0;
+}
+
+/*
+    Divisor: Given a number N. Print all the divisors of N in ascending order.
+*/
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    // printf("%d", N);
+
+    for(int i = 1; i <= N; i++)
+    {
+        if(N % i == 0){
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
+
+/*
+    Even Number: Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
+*/ 
+
+#include <stdio.h>
+
+int main()
+{
+    // ---------Code Here........
+    int N;
+    scanf("%d", &N);
+
+    int evenNum = 0;
+
+    for (int i = 1; i <= N; i++)
+    {
+        if (i % 2 == 0)
+        {
+            printf("%d\n", i);
+            evenNum = 1;
+        }
+    }
+
+    if (!evenNum)
+    {
+        printf("-1");
+    }
+
+    return 0;
+}
+
+/*
+    Lucky Numbers: A number of two digits is lucky if one of its digits is divisible by the other. (see concept-1)
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    // ---------Code Here........
+    int n;
+    scanf("%d", &n);
+
+    int last_digit = n % 10;
+    int first_digit = n / 10;
+
+    if (last_digit == 0)
+    {
+        printf("YES");
+    }
+    else if (first_digit % last_digit == 0 || last_digit % first_digit == 0)
+    {
+        printf("YES");
+    }
+    else
+    {
+        printf("NO");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+/***********************
+*** Week02: MO- 7.5 ***
+ *** Practice Day-02 ***
+ **********************/ 
+
+/*
+    Summation: Given a number N and an array A of N numbers. Print the absolute summation of these numbers.
+*/
+// Solve this support session
+#include <stdio.h>
+
+int main()
+{
+    // ---------Code Here........
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum = sum + arr[i];
+    }
+
+    printf("%d", abs(sum));
+
+    return 0;
+}
+
+
+/*
+    Search: Given a number N and an array A of N numbers. Determine if the number X exists in array A or not and print its position (0-index). (see concept-2)
+*/ 
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+    // ---------Code Here........
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    int x;
+    scanf("%d", &x);
+
+    int search = -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        // printf("Value: %d  Index: %d \n", arr[i], i);
+        if (arr[i] == x)
+        {
+            search = i;
+            break;
+        }
+        }
+
+    printf("%d", search);
+
+    return 0;
+}
+
+
+/*
+    Replacement: Given a number N and an array A of N numbers. Print the array after doing the following operations:
+*/ 
