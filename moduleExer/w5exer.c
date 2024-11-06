@@ -334,3 +334,499 @@ int main()
 /******* Week05: MO-18 ********
  *** Function and Recursion ***
  ******************************/ 
+
+//=============== 18.1: Recursion In C
+
+
+//=============== 18.2: Handling Base Case
+
+
+//=============== 18.3: Print 1 To N
+
+// 👉 CodeExample-1: 
+#include <stdio.h>
+
+void func(int x, int n)
+{
+  if (x > n)
+  {
+    return;
+  }
+  printf("%d\n", x);
+  func(x + 1, n);
+}
+
+int main()
+{
+
+  func(1, 5);
+
+  return 0;
+}
+
+// 👉 CodeExample-1: 
+#include <stdio.h>
+
+void func(int x, int n)
+{
+  if (x > n)
+  {
+    return;
+  }
+  // printf("%d\n", x);
+
+  printf("Before function call, Current X = %d and N = %d\n", x, n);
+
+  func(x + 1, n);
+
+  printf("After function call, Current X = %d and N = %d\n", x, n);
+}
+
+int main()
+{
+
+  printf("Before function call in main\n");
+
+  func(1, 5);
+
+  printf("After function call in main\n");
+
+  return 0;
+}
+
+
+//=============== 18.4: Understanding Call Flow and Return
+
+
+//=============== 18.5: Printing N To 1
+#include <stdio.h>
+
+void func(int x, int n)
+{
+
+  if (x > n)
+  {
+    return;
+  }
+
+  func(x + 1, n);
+
+  printf("%d\n", x);
+}
+
+int main()
+{
+
+  func(1, 10);
+
+  return 0;
+}
+
+
+//=============== 18.6: Sum of an Array
+
+#include <stdio.h>
+
+int a[100000], sum;
+
+void goToIndex(int i, int n)
+{
+  if(i == n) return;
+
+//   sum += a[i];
+
+  goToIndex(i + 1, n);
+}
+
+int main()
+{
+
+  int n;
+  scanf("%d", &n);
+
+  for (int i = 0; i < n; i++)
+  {
+    // scanf("%d", &a[i]);
+  }
+
+//   sum = 0;
+
+  goToIndex(0, n);
+
+  printf("%d\n", sum);
+
+  return 0;
+}
+
+/******* Week05:**************
+ ***  ***
+Conceptual Session-W05-1
+******************************/ 
+
+// 👁️Parameter + Return👁️
+#include <stdio.h>
+
+int add(int a, int b)
+{
+  int sum = a + b;
+
+  return sum;
+}
+
+
+int main()
+{
+
+  int a = 10, b = 20;
+
+  int sum = add(a,b);
+
+  printf("%d", sum);
+
+  return 0;
+}
+
+// 👁️No Parameter + Return👁️
+#include <stdio.h>
+
+int add()
+{
+  int a, b;
+  scanf("%d %d", &a, &b);
+
+  int sum = a + b;
+
+  return sum;
+}
+
+int main()
+{
+  // int sum = add();
+
+  printf("%d", sum);
+
+  return 0;
+}
+
+// 👁️Parameter + No Return👁️
+#include <stdio.h>
+
+void add(int a, int b)
+{
+  int sum = a + b;
+
+  printf("%d\n", sum);
+}
+
+int main()
+{
+  int a, b;
+  scanf("%d %d", &a, &b);
+
+  add(a, b);
+
+  return 0;
+}
+
+// 👁️No Parameter + No Return👁️
+#include <stdio.h>
+
+void add()
+{
+  int a, b;
+  scanf("%d %d", &a, &b);
+
+  int sum = a + b;
+
+  printf("%d\n", sum);
+}
+
+int main()
+{
+
+  // add();
+
+  return 0;
+}
+
+/*👁️👁️
+  Problem solving : 
+  1. Add (works with every type) ()
+  1. https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/G (parameter , no return )
+  2. https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/G (no parameter , no return)
+👁️👁️*/ 
+
+
+/*👁️👁️
+  Problem solving :Min and Max 
+  https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/G
+👁️👁️*/
+
+#include <stdio.h>
+
+void max_min()
+{
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    int min = 100001;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (min > arr[i])
+        {
+            min = arr[i];
+        }
+    }
+
+    int max = -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (max < arr[i])
+        {
+            max = arr[i];
+        }
+    }
+
+    printf("%d %d", min, max);
+}
+
+int main()
+{
+    max_min();
+
+    return 0;
+}
+
+/*👁️👁️
+  Problem solving : Prime Function
+  https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/D
+  solve chatGpt: https://chatgpt.com/c/672ad839-ea7c-8007-9a5f-06702eeb0811
+👁️👁️*/
+#include <stdio.h>
+#include <math.h>
+
+void prime_check(int n)
+{
+    if (n <= 1)
+    {
+        printf("NO\n");
+        return;
+    }
+    if (n <= 3)
+    {
+        printf("YES\n");
+        return;
+    }
+
+    if (n % 2 == 0 || n % 3 == 0)
+    {
+        printf("NO\n");
+        return;
+    }
+
+    int flag = 1;
+
+    // for (int i = 5; i * i <= n; i += 6)
+    // {
+    //     if (n % i == 0 || n % (i + 2) == 0)
+    //     {
+    //         flag = 0;
+    //         break;
+    //     }
+    // }
+
+    for (int i = 5; i <= sqrt(n); i += 2)
+    {
+        if (n % i == 0)
+        {
+            flag = 0;
+            break;
+        }
+    }
+
+    if (flag)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+}
+
+int main()
+{
+    int t;
+    scanf("%d", &t);
+
+    for (int i = 0; i < t; i++)
+    {
+        int n;
+        scanf("%d", &n);
+
+        prime_check(n);
+    }
+
+    return 0;
+}
+
+/*
+  additional : 
+  1. Call by value
+  2. Call by reference 
+  (when to use )
+
+*/ 
+#include <stdio.h>
+
+// Call by value (here x can not chage the value)
+// void change_to_10(int x)
+// {
+//     x = 10;
+// }
+
+// Call by Reference (here x  chage the value)
+void change_to_10(int *x)
+{
+    *x = 10;
+}
+
+
+int main()
+{
+
+    int n = 99;
+
+    // printf("%d\n", &n);
+
+    change_to_10(&n);
+
+    printf("%d\n", n);
+}
+
+
+
+
+
+
+
+
+
+
+
+/******* Week05: MO-18.5 ********
+ *** Practice Day-1 ***
+ https://chatgpt.com/c/6729fb72-c6dc-8007-b999-9ba23c8b6253
+
+ ******************************/ 
+// Add: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/A
+
+// 😁 Way -1
+
+#include <stdio.h>
+
+int sum(int x, int y)
+{
+  return x + y;
+}
+
+int main()
+{
+  int X, Y;
+
+  scanf("%d %d", &X, &Y);
+
+  printf("%d\n", sum(X, Y));
+
+  return 0;
+}
+
+// Way-2:
+
+#include <stdio.h>
+
+int x, y;
+
+int sum()
+{
+  return x + y;
+}
+
+int main()
+{
+
+  scanf("%d %d", &x, &y);
+
+  printf("%d\n", sum(x, y));
+
+  return 0;
+}
+
+
+// Swap: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/E
+
+#include <stdio.h>
+
+int x, y;
+
+void swap(int *x, int *y)
+{
+  int temp = *x;
+  *x = *y;
+  *y = temp;
+}
+
+int main()
+{
+
+  scanf("%d %d", &x, &y);
+
+  swap(&x, &y);
+
+  printf("%d %d\n", x, y);
+
+  return 0;
+}
+
+
+// Printing Recursion: https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/A
+#include <stdio.h>
+
+int n;
+
+void func(int n)
+{
+  if (n <= 0)
+    return;
+
+//   func(n - 1);
+  
+  printf("I love Recursion\n");
+  
+}
+
+int main()
+{
+
+  scanf("%d", &n);
+
+//   func(n);
+
+  return 0;
+}
+
+
+
+// 🥸🥸🥸 MO-19: Recursion and Pointer 🥸🥸🥸
+
+// 🌱🌱
+ 
