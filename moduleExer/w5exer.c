@@ -828,5 +828,324 @@ int main()
 
 // 🥸🥸🥸 MO-19: Recursion and Pointer 🥸🥸🥸
 
-// 🌱🌱
+// 🌱Call By Value, Call by Reference🌱
+#include <stdio.h>
+
+void func(int *x, int *y)
+{
+    *x = 5;
+    *y = 15;
+}
+
+
+int main()
+{
+   int a = 10, b = 20;
+
+   printf("%d %d\n", a, b);
+
+
+   func(&a, &b);
+
+   printf("%d %d\n", a, b);
+
+   
+   return 0;
+}
+
+
+// 🌱Passing Array and String in Function🌱
+// -------Example:
+#include <stdio.h>
+
+void func(int x[], int n)
+{
+    for(int i = 0; i < n; i++)
+    {
+      printf("%d ", x[i]);
+    }
+}
+
+
+int main()
+{
+   
+   int arr[20] = {1, 8, 4, 5, 3, 2, 5 , 7 , 6 , 8};
+
+   func(arr, 10);
+
+   return 0;
+}
+
+// -----Example: Sum of Array
+#include <stdio.h>
+
+int func(int x[], int n)
+{
+   int sum;
+
+   for (int i = 0; i < n; i++)
+   {
+      sum += x[i];
+   }
+   return sum;
+}
+
+int main()
+{
+
+   int arr[20] = {100, 200, 250, 150, 100};
+
+  //  int res = func(arr, 5);
+
+  //  printf("%d", res);
+
+   return 0;
+}
+
+// -----------Example
+#include <stdio.h>
+
+void length(char x[])
+{
+   int n = strlen(x);
+
+   printf("%d\n", n);
+}
+
+
+int main()
+{
+
+   char a[20] = "nasihul";
+
+   length(a);
+
+   return 0;
+}
+
+
+// -------- Example
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+// Count the string length
+void length(char x[])
+{
+   int n = strlen(x);
+
+   printf("%d\n", n);
+}
+
+// make first char Upper Case
+void makeFirstCharUpper(char x[])
+{
+   x[0] = toupper(x[0]);
+
+   printf("%s", x);
+}
+
+int main()
+{
+
+   char s[20] = "nasihul";
+
+   length(s);
+
+   makeFirstCharUpper(s);
+
+   return 0;
+}
+
+
+// 🌱Using Pointer variable as Parameter for Array🌱
+// --------Example:
+#include <stdio.h>
+#include <string.h>
+
+void func(int *x, int n)
+{
+   for (int i = 0; i < 5; i++)
+   {
+      printf("%d ", *(x + i));
+      x[i] += 50;
+   }
+}
+int main()
+{
+
+   int arr[5] = {1, 2, 3, 4, 6};
+
+   func(arr, 5);
+
+   printf("\n");
+
+   for (int i = 0; i < 5; i++)
+   {
+      printf("%d ", arr[i]);
+   }
+
+   return 0;
+}
+
+
+// 🌱Factorial🌱
+#include <stdio.h>
+
+long long factorial(int n){
+   if( n == 0){
+      return 1;
+   }
+
+   return n * factorial(n - 1);
+}
+
+int main()
+{
+   int n;
+
+   scanf("%d", &n);
+
+   printf("%lld\n", factorial(n)) ;
+
+   return 0;
+}
+
+
+
+// 🌱Printing Digits with Recursion🌱
+#include <stdio.h>
+
+void printDigits(int n)
+{
+
+   if (n == 0)
+   {
+      return;
+   }
+
+   int digit = n % 10;
+
+   printDigits(n / 10);
+
+   printf("%d ", digit);
+}
+
+int main()
+{
+   int t;
+   scanf("%d", &t);
+
+   for (int cs = 0; cs < t; cs++)
+   {
+      int n;
+      scanf("%d", &n);
+
+      if(n == 0) printf("0");
+
+      printDigits(n);
+
+      printf("\n");
+   }
+
+   return 0;
+}
+
+
+
+// 🌱Palindrom Array🌱
+#include <stdio.h>
+
+int isPalin(int *arr, int i, int j)
+{
+    if (i > j)
+    {
+        return 1;
+    }
+
+    return arr[i] == arr[j] && isPalin(arr, i + 1, j - 1);
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    if (isPalin(arr, 0, n - 1))
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+
+    return 0;
+}
+
+
+/******* Week05: MO-19.5 ********
+ *** Practice Day-2 ***
+ https://chatgpt.com/c/672c97cd-1b7c-8007-98ff-69ffd7df2ef5
+ ******************************/ 
+
+
+// Shift Zeros: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/N
+
+
+#include <stdio.h>
+
+void shiftZerosToRight(int arr[], int n){
+   int j = 0; // index to keep track of non-zeros elements
+
+   // Traverse the array
+   for (int i = 0; i < n; i++)
+   {
+      // If current element is non-zero, move it to position j and increment j
+      if(arr[i] != 0)
+      {
+         arr[j++] = arr[i];
+      }
+   }
+  
+
+   // Fill the remaining elements with zero
+   while (j < n){
+      arr[j++] = 0;
+   }
  
+   
+}
+
+int main()
+{
+   int n;
+   scanf("%d", &n);
+
+   // Input Elements of array
+   int arr[n];
+   for (int i = 0; i < n; i++)
+   {
+      scanf("%d", &arr[i]);
+   }
+
+   // Shift zero sto the right function
+   shiftZerosToRight(arr, n);
+
+   // Print the array after shifting right all its zeros.
+
+   for (int i = 0; i < n; i++)
+   {
+      printf("%d ", arr[i]);
+   }
+
+   return 0;
+}

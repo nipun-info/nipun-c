@@ -49,6 +49,7 @@ A format specifier starts with a percentage sign %, followed by a character.
 For example, to output the value of an int variable, use the format specifier %d
 surrounded by double quotes (""), inside the printf() function:
 
+** যখন আমরা variable declare করি তখন সেটি RAM -এ Store হয়।
 
 short int - %hd
 int - %d
@@ -667,6 +668,63 @@ int main()
 }
 
 // ******************* Infinity loop ********************
+#include <stdio.h>
+
+int main()
+{
+
+   // infinity loop -1:
+   for(int i = 0; i <=10; )
+   {
+      printf("Hello Loop ");
+   }
+
+   // infinity loop -2:
+   for(int i = 0; i <=10; i-- )
+   {
+      printf("Hello Loop ");
+   }
+
+   // infinity loop -3:
+   for(int i = 0; ; i++ )
+   {
+      printf("Hello Loop ");
+   }
+
+   // infinity loop -4:
+   for(; ;)
+   {
+      printf("Hello Loop ");
+   }
+
+   // infinity loop -5:
+   int i = 0;
+   while(1)
+   {
+      printf("Hello While Loop ");
+   }
+
+   // infinity loop -6:
+   int i = 0;
+   while(i < 10)
+   {
+      printf("Hello While Loop ");
+   }
+
+   // infinity loop -7:
+   int i = 0;
+   while(i < 10)
+   {
+      printf("Hello While Loop ");
+      i--;
+   }
+
+   return 0;
+}
+
+
+
+
 
 // ******************* loop Conseptual 02 ********************
 // #problem-1: Given a number N, Print all even numbers
