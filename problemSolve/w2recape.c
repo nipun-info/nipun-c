@@ -2,7 +2,7 @@
 /*
 Char: Given a letter X. If the letter is lowercase print the letter after converting it from lowercase letter to uppercase letter. Otherwise print the letter after converting it from uppercase letter to lowercase letter
 https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/N
-*/ 
+*/
 #include <stdio.h>
 
 int main()
@@ -82,7 +82,7 @@ Codeforces Problem-(Mathematical Expression):
 Given a mathematical expression. The expression will be one of the following expressions:
 https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/W
 
-*/ 
+*/
 #include <stdio.h>
 
 int main()
@@ -124,7 +124,7 @@ int main()
 /*
     Codeforces Problem-(Memo and Momo): https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/B
     Memo and Momo are playing a game. Memo will choose a positive number a and Momo will choose a positive number b. Your task is to tell them who will win according to the following rules:
-*/ 
+*/
 #include <stdio.h>
 
 int main()
@@ -135,7 +135,8 @@ int main()
 
     // printf("%d %d %d", a, b, k);
 
-    if (a % k == 0 && b % k == 0){
+    if (a % k == 0 && b % k == 0)
+    {
         printf("Both");
     }
     else if (a % k == 0 && b % k != 0)
@@ -157,7 +158,7 @@ int main()
 /*
     Codeforces Problem-(Sort Numbers): https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/T
     Given three numbers A, B, C. Print these numbers in ascending order followed by a blank line and then the values in the sequence as they were read.
-*/ 
+*/
 #include <stdio.h>
 
 int main()
@@ -203,4 +204,161 @@ int main()
 
     return 0;
 }
+
+/*
+    Codeforces Problem-(Sum of ODD Consecutive Number): https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/S
+    Given two numbers X and Y. Print the sum of all odd numbers between them, excluding X and Y.
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int t;
+    scanf("%d", &t);
+
+    for (int cs = 0; cs < t; cs++)
+    {
+        int x, y;
+        scanf("%d %d", &x, &y);
+
+        if (x > y)
+        {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+
+        int sum = 0;
+
+        for (int i = x + 1; i < y; i++)
+        {
+            if (i % 2 != 0)
+            {
+                // odd
+                sum += i;
+            }
+        }
+
+        printf("%d\n", sum);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    Codeforces Problem-(Positions in array): https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/D
+    Given a number N and an array A of N numbers. Print all array positions that store a number less than or equal to 10 and the number stored in that position.
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int arr[n + 5];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] <= 10)
+        {
+            printf("A[%d] = %d\n", i, arr[i]);
+        }
+    }
+
+    return 0;
+}
+
+
+
+/*
+    Codeforces Problem-(Replace MinMax): https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/M
+    Given a number N and an array A of N numbers. Print the array after doing the following operations:
+*/
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int arr[n + 5];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    int min = arr[0], max = arr[0];
+    int min_pos = 0, max_pos = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] < min)
+        {
+            min = arr[i];
+            min_pos = i;
+        }
+
+        if (arr[i] > max)
+        {
+            max = arr[i];
+            max_pos = i;
+        }
+    }
+
+    // printf("%d %d\n", min, max);
+    // printf("%d %d\n", min_pos, max_pos);
+
+    int temp = arr[min_pos];
+    arr[min_pos] = arr[max_pos];
+    arr[max_pos] = temp;
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+
+/*
+    Codeforces Problem-(Replace MinMax): https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/J
+    Given a number N and an array A of N numbers. Determine if the array is lucky or not.
+*/
+
+
+
+
 

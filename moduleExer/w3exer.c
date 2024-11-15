@@ -315,168 +315,6 @@ int main()
 
 
 
-/***********************
- ******* Week03 ********
- **** Conceptual-01 ****
- **********************/ 
-//------------ CodeExaple-1:Insert c 2 number index
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char word[8];
-
-    scanf("%s", word);
-
-    for (int i = 6; i >= 2; i--)
-    {
-        word[i + 1] = word[i];
-    }
-
-    word[2] = 'c';
-
-    printf("%s", word);
-
-    return 0;
-}
-
-//------------ CodeExaple-2: Delect c 2 number index
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char word[8];
-
-    scanf("%s", word);
-
-    for (int i = 3; i <= 6; i++)
-    {
-        word[i] = word[i + 1];
-    }
-
-    printf("%s", word);
-
-    return 0;
-}
-
-/**************
-Given a number N and an array A of N numbers. Print the array in a reversed order.
-https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/F
-**************/ 
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    int n;
-    scanf("%d", &n);
-
-    int a[n];
-
-    for(int i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
-
-
-    int left = 0, right = n-1;
-
-    while(left < right){
-        int temp = a[left];
-        a[left] = a[right];
-        a[right] = temp;
-
-        left++;
-        right--;
-    }
-
-    for(int i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-
-    return 0;
-}
-
-
-/**************
-Given a number N and an array A  of N numbers. Determine if it's palindrome or not.
-https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/G
-**************/ 
-#include <stdio.h>
-
-int main()
-{
-    int n;
-    scanf("%d", &n);
-
-    int a[n];
-
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
-
-    int l = 0, r = n - 1;
-
-    int pal = 1;
-
-    while (l <= r)
-    {
-
-        if (a[l] != a[r])
-        {
-            pal = 0;
-            break;
-        }
-
-        l++; // l k shamner dike niye gesi
-        r--; // r k pechoner dike niye ashchi
-    }
-
-    if (pal == 1)
-    {
-        printf("YES\n");
-    }
-    else
-    {
-        printf("NO\n");
-    }
-}
-
-/************** SUM DIGITS **********************
-Given a number N and an array A of N digits (not separated by space). Print the summation of these digits.
-https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/K
-************************************************/ 
-#include <stdio.h>
-
-int main()
-{
-    int n;
-    scanf("%d", &n);
-
-    char num[n + 1];
-
-    scanf("%s", num);
-
-    long long int sum = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        int digit = num[i] - '0';
-        sum = sum + digit;
-    }
-
-    printf("%d", sum);
-
-    return 0;
-}
-
-
 
 
 /*************************************
@@ -663,6 +501,34 @@ int main()
 
     return 0;
 }
+
+
+// -------Example-2:
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[20] = "banglasesh";
+    char str2[20];
+
+    strcpy(str2, str);
+
+    int len = strlen(str);
+
+    for (int i = 0, j = len - 1; i <= j; i++, j--)
+    {
+        char temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+    }
+
+    printf("%s %s", str2, str);
+
+    return 0;
+}
+
+
 /*
 ট্রিকি কুইজগুলো এখানে এক্সপ্লেইন করে দেওয়া আছে। তারপরও কোথাও ডাউট থাকলে কুইজের উত্তর শো 
 করে গ্রুপে পোস্ট না করে সাপোর্ট সেশনে জয়েন হয়ে ক্লিয়ার হয়ে নিয়েন। 
@@ -673,10 +539,169 @@ https://docs.google.com/document/d/1kYj83R3mniTY99aVaMW0FZ-Ic7U3g8cd7SMHltZkgpA/
 
 
 
+
 /***********************
  ******* Week03 ********
  **** Conceptual-01 ****
  **********************/ 
+//------------ CodeExaple-1:Insert c 2 number index
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char word[8];
+
+    scanf("%s", word);
+
+    for (int i = 6; i >= 2; i--)
+    {
+        word[i + 1] = word[i];
+    }
+
+    word[2] = 'c';
+
+    printf("%s", word);
+
+    return 0;
+}
+
+//------------ CodeExaple-2: Delect c 2 number index
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char word[8];
+
+    scanf("%s", word);
+
+    for (int i = 3; i <= 6; i++)
+    {
+        word[i] = word[i + 1];
+    }
+
+    printf("%s", word);
+
+    return 0;
+}
+
+/**************
+Given a number N and an array A of N numbers. Print the array in a reversed order.
+https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/F
+**************/ 
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+
+    int left = 0, right = n-1;
+
+    while(left < right){
+        int temp = a[left];
+        a[left] = a[right];
+        a[right] = temp;
+
+        left++;
+        right--;
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
+
+
+/**************
+Given a number N and an array A  of N numbers. Determine if it's palindrome or not.
+https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/G
+**************/ 
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    int l = 0, r = n - 1;
+
+    int pal = 1;
+
+    while (l <= r)
+    {
+
+        if (a[l] != a[r])
+        {
+            pal = 0;
+            break;
+        }
+
+        l++; // l k shamner dike niye gesi
+        r--; // r k pechoner dike niye ashchi
+    }
+
+    if (pal == 1)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+}
+
+/************** SUM DIGITS **********************
+Given a number N and an array A of N digits (not separated by space). Print the summation of these digits.
+https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/K
+************************************************/ 
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    char num[n + 1];
+
+    scanf("%s", num);
+
+    long long int sum = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        int digit = num[i] - '0';
+        sum = sum + digit;
+    }
+
+    printf("%d", sum);
+
+    return 0;
+}
+
+
 
 
 
@@ -686,8 +711,113 @@ https://docs.google.com/document/d/1kYj83R3mniTY99aVaMW0FZ-Ic7U3g8cd7SMHltZkgpA/
  ******* Week03 ********
  **** Conceptual-02 ****
  **********************/ 
+/*
+    Problem: Way Too Long Words 
+    https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/F
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int t;
+    scanf("%d", &t);
+
+    for (int i = 0; i < t; i++)
+    {
+        char str[105];
+        scanf("%s", str);
+
+        int len = strlen(str);
+
+        if (len > 10)
+        {
+            printf("%c%d%c\n", str[0], len - 2, str[len - 1]);
+        }
+        else
+        {
+            printf("%s\n", str);
+        }
+    }
+
+    return 0;
+} 
+
+/*
+    Problem: Conversion
+    https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/G
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char S[100005];
+    scanf("%s", S);
+
+    int len = strlen(S);
+
+    for (int i = 0; i < len; i++)
+    {
+        if (S[i] == ',')
+        {
+            S[i] = ' ';
+        }
+        else if (S[i] >= 'A' && S[i] <= 'Z')
+        {
+            S[i] = S[i] + 32;
+        }
+        else if (S[i] >= 'a' && S[i] <= 'z')
+        {
+            S[i] = S[i] - 32;
+        }
+    }
+
+    printf("%s", S);
+
+    return 0;
+}
 
 
+/*
+    Problem: Palindrome String
+    https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/I
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char S[1005];
+    scanf("%s", S);
+
+    int len = strlen(S);
+
+    int i = 0;
+    int j = len - 1;
+    int isPalindrome = 1;
+    while (i <= j)
+    {
+        if (S[i] != S[j])
+        {
+            isPalindrome = 0;
+            break;
+        }
+        i++;
+        j--;
+    }
+
+    if (isPalindrome == 1)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+
+    return 0;
+}
 
 
 
@@ -696,8 +826,94 @@ https://docs.google.com/document/d/1kYj83R3mniTY99aVaMW0FZ-Ic7U3g8cd7SMHltZkgpA/
  ******* Week03 ********
  *** Practice Day-01 ***
  **********************/ 
+// 😡😡😡  Reversing 😡😡😡  
+#include <stdio.h>
+
+int a[100000];
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    int pal = 1;
+
+    for (int i = 0, j = n - 1; i <= j; i++, j--)
+    {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
 
 
+
+// 😡😡😡 Palindrome Array 😡😡😡 
+#include <stdio.h>
+
+int a[100000];
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int a[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    int pal = 1;
+
+    for (int i = 0, j = n - 1; i <= j; i++, j--)
+    {
+        if (a[i] != a[j])
+        {
+            pal = 0;
+            break;
+        }
+    }
+
+    if (pal == 1)
+    {
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
+    }
+
+    return 0;
+}
+
+
+// 😡😡😡  Way Too Long Words 😡😡😡  
+// (See Conceptual session Two)
+
+
+// 😡😡😡  Conversion 😡😡😡  
+// (See Conceptual session Two)
+
+
+
+// 😡😡😡  Palindrome String 😡😡😡  
+// (See Conceptual session Two)
 
 
 
@@ -707,4 +923,42 @@ https://docs.google.com/document/d/1kYj83R3mniTY99aVaMW0FZ-Ic7U3g8cd7SMHltZkgpA/
  ******* Week03 ********
  *** Practice Day-02 ***
  **********************/ 
+/*
+    😡😡😡 Compare 😡😡😡
+    https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/C
+    [Note: In C, you can use the strcmp function to compare two strings 
+    lexicographically. The function returns a negative number if the first
+    string is lexicographically smaller, zero if they are equal, and a 
+    positive number if the first string is lexicographically larger.]
+
+*/ 
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char X[21];
+    char Y[21];
+
+    scanf("%s %s", X, Y);
+
+    
+    if (strcmp(X, Y) < 0)
+    {
+        printf("%s", X);
+    }
+    else
+    {
+        printf("%s", Y);
+    }
+
+    return 0;
+}
+
+
+
+/*
+    😡😡😡 Count 😡😡😡
+    https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/E
+*/  
 

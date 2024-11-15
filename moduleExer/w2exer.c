@@ -1,5 +1,5 @@
 /*******************************
-      Week-02: Module 05: 
+      Week-02: Module 05:
    Conditional Statement Recap
 *******************************/
 
@@ -108,7 +108,7 @@ int main()
 }
 
 /***********************
-   Problem: 
+   Problem:
    Odd Even Positive Negative
 
 ***********************/
@@ -158,8 +158,8 @@ int main()
    Only one line containing a character X which will be a capital or small letter or digit.
 
    Output:
-   Print a single line contains "IS DIGIT" if X is digit otherwise, print "ALPHA" 
-   in the first line followed by a new line that contains "IS CAPITAL" if X is a capital 
+   Print a single line contains "IS DIGIT" if X is digit otherwise, print "ALPHA"
+   in the first line followed by a new line that contains "IS CAPITAL" if X is a capital
    letter and "IS SMALL" if X is a small letter.
 
 ***********************/
@@ -178,7 +178,7 @@ int main()
     else
     {
         printf("ALPHA\n");
-        if(ch >= 'A' && ch <= 'Z')
+        if (ch >= 'A' && ch <= 'Z')
         {
             printf("IS CAPITAL\n");
         }
@@ -193,10 +193,10 @@ int main()
 /***********************
    Codeforces Problem-2:
    Given 3 numbers A, B and C, Print the minimum and the maximum numbers.
-   
+
    Input:
    Only one line containing 3 numbers A, B and C ( - 100000 ≤ A, B, C ≤ 100000)
-   
+
    Output:
    Print the minimum number followed by a single space then print the maximum number.
 
@@ -246,44 +246,43 @@ int main()
 int main()
 {
 
-   int a, b, c;
+    int a, b, c;
 
-   scanf("%d %d %d", &a, &b, &c);
+    scanf("%d %d %d", &a, &b, &c);
 
-   // Finding the minimum
-   int min = a;
+    // Finding the minimum
+    int min = a;
 
-   if (b < min)
-      min = b;
+    if (b < min)
+        min = b;
 
-   if (c < min)
-      min = c;
+    if (c < min)
+        min = c;
 
-   // Finding the Maximun
+    // Finding the Maximun
 
-   int max = a;
-   if (b > a)
-      max = b;
+    int max = a;
+    if (b > a)
+        max = b;
 
-   if (c > a)
-      max = c;
+    if (c > a)
+        max = c;
 
-   printf("%d %d\n", min, max);
+    printf("%d %d\n", min, max);
 
-   return 0;
+    return 0;
 }
 
-
-
 /*******************************
-      Week-02: Module 06: 
+      Week-02: Module 06:
    Loop and Nested Loop Recap
 *******************************/
 #include <stdio.h>
 
 int main()
 {
-    for(int i = 1; i <= 10; i++){
+    for (int i = 1; i <= 10; i++)
+    {
         // printf("Hello world.\n");
         printf("%d\n", i);
     }
@@ -318,11 +317,12 @@ int main()
     for (int i = 0; i < 3; i++)
     {
         // count++;
-        for(int j =0; j < 5; j++){
+        for (int j = 0; j < 5; j++)
+        {
             count++;
         }
     }
-    printf("%d\n", count); //output 15
+    printf("%d\n", count); // output 15
 
     return 0;
 }
@@ -361,11 +361,11 @@ int main()
 
     scanf("%d", &num);
 
-    printf("%d x 1 = %d\n", num, num * 1 );
-    printf("%d x 2 = %d\n", num, num * 2 );
-    printf("%d x 3 = %d\n", num, num * 3 );
-    printf("%d x 4 = %d\n", num, num * 4 );
-    printf("%d x 5 = %d\n", num, num * 5 );
+    printf("%d x 1 = %d\n", num, num * 1);
+    printf("%d x 2 = %d\n", num, num * 2);
+    printf("%d x 3 = %d\n", num, num * 3);
+    printf("%d x 4 = %d\n", num, num * 4);
+    printf("%d x 5 = %d\n", num, num * 5);
 
     return 0;
 }
@@ -379,7 +379,7 @@ int main()
 
     scanf("%d", &num);
 
-    for(int i = 1; i <= 10; i++)
+    for (int i = 1; i <= 10; i++)
     {
         printf("%d   x %3d = %3d\n", num, i, num * i);
     }
@@ -411,17 +411,16 @@ int main()
     return 0;
 }
 
-
 // ======= 6.4: Odd, Even, Positive, Negative =========
 
 /***********************
    Codeforces Problem-3: https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/C
    Given N numbers. Count how many of these values are even, odd, positive and negative.
-   
+
    Input:
    First line contains one number N (1 ≤ N ≤ 1000) number of values.
    Second line contains N numbers (-10^5 ≤ X i ≤ 10^5).
-   
+
    Output:
    Print four lines with the following format:
    First Line: "Even: X", where X is the number of even numbers in the given input.
@@ -441,23 +440,25 @@ int main()
 
     int evenCount = 0, oddCount = 0, positiveCount = 0, negativeCount = 0;
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         int x;
         scanf("%d", &x);
 
-        if(x % 2 ==0)
+        if (x % 2 == 0)
         {
             evenCount++;
         }
-        else {
+        else
+        {
             oddCount++;
         }
-        if(x > 0)
+        if (x > 0)
         {
             positiveCount++;
         }
-        else if (x < 0){
+        else if (x < 0)
+        {
             negativeCount++;
         }
     }
@@ -475,10 +476,10 @@ int main()
 
 int main()
 {
-    for(int i = 100; i <= 300; i++)
+    for (int i = 100; i <= 300; i++)
     {
         printf("Checking %d\n", i);
-        if(i % 2 == 0 && i % 3 == 0 && i % 5 == 0)
+        if (i % 2 == 0 && i % 3 == 0 && i % 5 == 0)
         {
             printf("%d is the number\n", i);
             break;
@@ -487,20 +488,20 @@ int main()
 
     // --------- example-2
 
-    for(int i = 0;  i < 10; i++)
+    for (int i = 0; i < 10; i++)
     {
         printf("%d\n", i);
 
         printf("Line 1\n");
         printf("Line 2\n");
 
-        if(i  == 5){
+        if (i == 5)
+        {
             break;
         }
 
         printf("Line 3\n");
         printf("Line 4\n");
-
     }
 
     return 0;
@@ -508,23 +509,15 @@ int main()
 
 // ======= 6.6: Continue Statement =========
 
-
-
-
-
-
-
-
-
 // ======= 6.7: Digits =========
 /***********************
    Codeforces Problem-3: https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/Q
    Given a number N. Print the digits of that number from right to left separated by space.
-   
+
    Input:
    First line contains a number T (1 ≤ T ≤ 10) number of test cases.
    Next T lines will contain a number N (0 ≤ N ≤ 109)
-   
+
    Output:
    For each test case print a single line contains the digits of the number separated by space.
 
@@ -559,12 +552,12 @@ int main()
 }
 
 // ======= 6.8: Pattern =========
-/* 
+/*
 Print pattern-1:
-* 
-* * 
-* * * 
-* * * * 
+*
+* *
+* * *
+* * * *
 * * * * *
 for(int i = 1; i<= 5; i++){
     // printf("i = %d\n", i);
@@ -573,32 +566,32 @@ for(int i = 1; i<= 5; i++){
         printf("* ", j);
     }
     printf("\n");
-} 
+}
 */
 
-/* 
+/*
 Print pattern-2:
-1 
-2 1 
-3 2 1 
-4 3 2 1 
-5 4 3 2 1 
+1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
 for(int i = 1; i<= 5; i++){
     // printf("i = %d\n", i);
     for(int j = i; j >= 1; j--){
         printf("%d ", j);
     }
     printf("\n");
-} 
+}
 */
 
-/* 
+/*
 Print pattern-3:
-    1 
-   1 2 
-  1 2 3 
- 1 2 3 4 
-1 2 3 4 5 
+    1
+   1 2
+  1 2 3
+ 1 2 3 4
+1 2 3 4 5
 
 int main()
 {
@@ -623,7 +616,7 @@ int main()
 }
 */
 
-/* 
+/*
 Print pattern-4:
     1
    12
@@ -654,12 +647,12 @@ int main()
 }
 
 Pattern -6:
-1 2 3 4 5 6 7 
-1 2 3 4 5 6 
-1 2 3 4 5 
-1 2 3 4 
-1 2 3 
-1 2 
+1 2 3 4 5 6 7
+1 2 3 4 5 6
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
 1
 
 #include <stdio.h>
@@ -682,30 +675,14 @@ int main()
 }
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /************** Week-02 ***************
     Module 07: Introduction to Array
 ***************************************/
 // 7.4: Initializing an Accessing an Array
 
-int arr[5] = {1, 55, 8 ,9, 77};
-int arr[] = {2, 55 ,99 ,8, 105};
+int arr[5] = {1, 55, 8, 9, 77};
+int arr[] = {2, 55, 99, 8, 105};
 int arr[5] = {0};
-
-
 
 // -------- Example-1:
 #include <stdio.h>
@@ -743,14 +720,14 @@ int main()
 {
     int a[5];
 
-    for(int i =0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         scanf("%d", &a[i]);
     }
 
     // printf("%d", a[1]);
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("%d ", a[i]);
     }
@@ -765,14 +742,14 @@ int main()
 {
     float a[5];
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         scanf("%f", &a[i]);
     }
 
     // printf("%d", a[1]);
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("%0.2f ", a[i]);
     }
@@ -787,14 +764,14 @@ int main()
 {
     char a[5];
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         scanf("%c", &a[i]);
     }
 
     // printf("%d", a[1]);
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("%c ", a[i]);
     }
@@ -810,7 +787,7 @@ int main()
     // int ar[5] = {10};
     int ar[5] = {0};
 
-    for(int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("%d\n", ar[i]);
     }
@@ -858,11 +835,11 @@ int main()
         scanf("%d", &ar[i]); // ইনপুট নিচ্ছি। 
     }
 
-    for (int i = n-1; i >= 0; i--)  // এরের লাস্ট ইন্ডেক্স n-1 থেকে প্রথম ইন্ডেক্স 0 পর্যন্ত লুপ চালানো হয়েছে। যেহেতু প্রতিবার ইন্ডেক্স এর মান ১ করে কমছে তাই i-- করে প্রতিবার i এর মান ১ করে কমানো হচ্ছে।
+    for (int i = n - 1; i >= 0; i--) // এরের লাস্ট ইন্ডেক্স n-1 থেকে প্রথম ইন্ডেক্স 0 পর্যন্ত লুপ চালানো হয়েছে। যেহেতু প্রতিবার ইন্ডেক্স এর মান ১ করে কমছে তাই i-- করে প্রতিবার i এর মান ১ করে কমানো হচ্ছে।
     {
         printf("%d ", ar[i]);
     }
-    
+
     return 0;
 }
 
@@ -877,24 +854,24 @@ int main()
 
     int ar[n]; // ওই সাইজের এরে ডিক্লেয়ার করা হচ্ছে। 
 
-    for (int i = 0; i < n; i++) 
+    for (int i = 0; i < n; i++)
     {
         scanf("%d", &ar[i]); // ইনপুট নিচ্ছি। 
     }
 
     int sum = 0;
 
-    for (int i = 0; i < n; i++)  
+    for (int i = 0; i < n; i++)
     {
         sum += ar[i];
     }
 
     printf("Sum: %d\n", sum);
 
-    double avg = (double) sum / n;
+    double avg = (double)sum / n;
 
     printf("Average: %lf\n", avg);
-    
+
     return 0;
 }
 
@@ -910,7 +887,7 @@ int main()
 
     int ar[n]; // ওই সাইজের এরে ডিক্লেয়ার করা হচ্ছে। 
 
-    for (int i = 0; i < n; i++) 
+    for (int i = 0; i < n; i++)
     {
         scanf("%d", &ar[i]); // ইনপুট নিচ্ছি। 
     }
@@ -918,13 +895,15 @@ int main()
     int min = INT_MAX, max = INT_MIN;
     // int min = ar[0], max = ar[0];
 
-    for(int i = 0;  i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(ar[i] < min){
+        if (ar[i] < min)
+        {
             min = ar[i];
         }
 
-        if(ar[i] > max){
+        if (ar[i] > max)
+        {
             max = ar[i];
         }
 
@@ -932,16 +911,14 @@ int main()
     }
 
     printf("Minimum = %d, Maximum = %d", min, max);
-    
+
     return 0;
-}    
-
-
+}
 
 /***********************
  ******* Week02 ********
  **** Conceptual-01 ****
- **********************/ 
+ **********************/
 //--------Problem-1:
 #include <stdio.h>
 
@@ -980,10 +957,10 @@ int main()
    A number of two digits is lucky if one of its digits is divisible by the other.
    For example, 39, 82, and 55 are lucky, while 79 and 43 are not.
    Given a number between 10 and 99, determine whether it is lucky or not.
-   
+
    Input
    Only one line containing a single number N (10≤N≤99).
-   
+
    Output
    Print "YES" if the given number is lucky, otherwise print "NO".
 
@@ -1000,7 +977,7 @@ int main()
     int first_digit = n / 10;
     int second_digit = n % 10;
 
-    if(first_digit % second_digit == 0 || second_digit % first_digit == 0)
+    if (first_digit % second_digit == 0 || second_digit % first_digit == 0)
     {
         printf("YES\n");
     }
@@ -1008,19 +985,18 @@ int main()
     {
         printf("NO\n");
     }
-    
+
     return 0;
 }
 
-
 /********** Fixed Password *************
    Codeforces Problem-5: https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/D
-   Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password 
+   Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password
    is incorrect otherwise, print "Correct" and terminate the program.
    Note: The "Correct" password is the number 1999.
-   
+
    Output
-   Print "Wrong" if the password is typed wrong otherwise, print "Correct" if the password is 
+   Print "Wrong" if the password is typed wrong otherwise, print "Correct" if the password is
    typed correctly.
 
 ***********************/
@@ -1057,7 +1033,7 @@ Second line contains N numbers Xi (0 ≤ Xi ≤ 109).
 
 Output
 Print the maximum number.
-   
+
 ***********************/
 #include <stdio.h>
 #include <limits.h>
@@ -1070,46 +1046,35 @@ int main()
     int maxium_value = INT_MIN;
     // printf("%d\n", maxium_value);
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        int x; 
+        int x;
         scanf("%d", &x);
 
         // printf("%d %d\n", maxium_value, x);
 
-        if(maxium_value < x) {
+        if (maxium_value < x)
+        {
             maxium_value = x;
         }
-        
+
         // printf("latest: %d\n", maxium_value);
     }
 
     printf("%d\n", maxium_value);
-   
+
     return 0;
 }
-
-
-
-
-
-
-
 
 /***********************
  ******* Week02 ********
  **** Conceptual-02 ****
- **********************/ 
-
-
-
-
-
+ **********************/
 
 /***********************
  *** Week02: MO- 6.5 ***
  *** Practice Day-01 ***
- **********************/ 
+ **********************/
 /*
     Given a lowercase alphabet character. You have to print the next character in the alphabet.
 */
@@ -1131,16 +1096,17 @@ int main()
     {
         printf("%c", ch + 1);
     }
-    
+
     return 0;
 }
 
 /*
     Ali Baba: One day, Ali Baba had an easy puzzle that he couldn't solve. The puzzle consisted of 4 numbers and his task was to check whether he could get the fourth number using arithmetic operators (+,−,×) between the other three numbers; so that each operator is used only once.
-*/ 
+*/
+// --------- Wrong answer on test 4
 
-
-int main() {
+int main()
+{
     long long a, b, c, d;
     scanf("%lld %lld %lld %lld", &a, &b, &c, &d);
 
@@ -1153,16 +1119,17 @@ int main() {
         (a - b * c == d) ||
         (a * b + c == d) ||
         (a * b - c == d) ||
-        (a * b * c == d)) {
+        (a * b * c == d))
+    {
         printf("YES\n");
-    } else {
+    }
+    else
+    {
         printf("NO\n");
     }
 
     return 0;
 }
-
-
 
 /*
     Divisor: Given a number N. Print all the divisors of N in ascending order.
@@ -1175,9 +1142,10 @@ int main()
     scanf("%d", &N);
     // printf("%d", N);
 
-    for(int i = 1; i <= N; i++)
+    for (int i = 1; i <= N; i++)
     {
-        if(N % i == 0){
+        if (N % i == 0)
+        {
             printf("%d\n", i);
         }
     }
@@ -1187,7 +1155,7 @@ int main()
 
 /*
     Even Number: Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
-*/ 
+*/
 
 #include <stdio.h>
 
@@ -1247,15 +1215,10 @@ int main()
     return 0;
 }
 
-
-
-
-
-
 /***********************
 *** Week02: MO- 7.5 ***
- *** Practice Day-02 ***
- **********************/ 
+*** Practice Day-02 ***
+**********************/
 
 /*
     Summation: Given a number N and an array A of N numbers. Print the absolute summation of these numbers.
@@ -1287,10 +1250,9 @@ int main()
     return 0;
 }
 
-
 /*
     Search: Given a number N and an array A of N numbers. Determine if the number X exists in array A or not and print its position (0-index). (see concept-2)
-*/ 
+*/
 #include <stdio.h>
 #include <limits.h>
 
@@ -1320,14 +1282,47 @@ int main()
             search = i;
             break;
         }
-        }
+    }
 
     printf("%d", search);
 
     return 0;
 }
 
-
 /*
     Replacement: Given a number N and an array A of N numbers. Print the array after doing the following operations:
-*/ 
+*/
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > 0)
+        {
+            arr[i] = 1;
+        }
+
+        if (arr[i] < 0)
+        {
+            arr[i] = 2;
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
