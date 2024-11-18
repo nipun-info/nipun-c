@@ -123,70 +123,105 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 🪂🪂🪂🪂 Switch in C++
 
 // 🪂🪂🪂🪂 Min, Max, Swap
 
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cin >> a >> b;
+
+    // if(a < b)
+    // {
+    //     cout << a << endl;
+    // }
+    // else {
+    //     cout << b << endl;
+    // }
+
+    // find minimum number of two numbers
+    cout << min(a, b) << endl;
+
+    // find max number of two numbers
+    cout << max(a,b) << endl;
+
+    // find minimum number of multiple numbers
+    cout << min({3,5,8,9,75}) << endl;
+
+    // find maximum number of multiple numbers
+    cout << max({3,5,8,9,75}) << endl;
+
+    return 0;
+}
+
+// -------- swapping the value
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a >> b;
+
+    // int temp = a;
+    // a = b;
+    // b = temp;
+
+    swap(a,b);
+
+    cout << a << " " << b << endl;
+
+    return 0;
+}
+
+
 // 🪂🪂🪂🪂 String in C++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char s[100];
+
+    cin >> s;
+    cout << s << endl;  // print: Hello
+
+    cin.getline(s, 100);   
+    cout << s << endl;      // print: Hello world 
+
+
+    return 0;
+}
+
+// -------- example-2:
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x;
+
+    cin >> x;
+
+    cin.ignore();
+
+    char s[100];
+
+    cin.getline(s, 100);
+
+    cout << x << endl << s << endl;
+
+
+    return 0;
+}
+
 
 // 🪂🪂🪂🪂 Summary and bits header file
+#include<bits/stdc++.h>
+
