@@ -359,7 +359,7 @@ Certainly! This code checks if a given 𝑛 × 𝑛 matrix is a scalar matrix. A
 
 (2,0), (2,1), (2,2)
 
-*/ 
+*/
 
 // ===== 14.6: Checking a Scalar Matrix  =======
 
@@ -416,10 +416,10 @@ int main()
 
 /*
 Alphabet character frequency
-Details Explain this link: 
+Details Explain this link:
 https://chatgpt.com/c/67235d6b-29e8-8007-9ae7-ddee5c2f1fb6
 
-*/ 
+*/
 #include <stdio.h>
 
 int main()
@@ -497,7 +497,7 @@ int main()
 #include <stdio.h>
 
 int main()
-{  
+{
     int r, c;
     scanf("%d %d", &r, &c);
     int a[r][c];
@@ -560,13 +560,12 @@ int main()
         printf("\n");
     }
 
-
     return 0;
 }
 
 /*
-main diagonal => i == j || Secondary Diagonal => i + j = n - 1 
-*/ 
+main diagonal => i == j || Secondary Diagonal => i + j = n - 1
+*/
 
 /*************************************
       MO - 14.5: Practice Day -1
@@ -575,9 +574,7 @@ main diagonal => i == j || Secondary Diagonal => i + j = n - 1
 /*
     Count Letters: https://codeforces.com/group/MWSDmqGsZm/contest/219856/problem/J
     Given a string S. Determine how many times does each letter occurred in S.
-*/ 
-
-
+*/
 
 /*
     Search In Matrix: https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/S
@@ -603,7 +600,7 @@ int main()
 
     int x;
     scanf("%d", &x);
-    
+
     int found = 0;
 
     for (int i = 0; i < n; i++)
@@ -634,13 +631,10 @@ int main()
     return 0;
 }
 
-
 /*
     Matrix: https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/T
     Given a number N and a 2D array A of size N * N. Print the absolute difference between the summation of its two diagonals (primary diagonal and secondary diagonal).
-*/ 
-
-
+*/
 
 /*************************************
     MO - 15: Dynamic Array & Pointer
@@ -664,7 +658,7 @@ int main()
     // printf("%d \n", b);
 
     // printf("%d \n", *b);
-    
+
     *b = 6;
 
     int val = *b;
@@ -672,12 +666,9 @@ int main()
     printf("%d\n", val);
 
     printf("%d \n", a);
-    
 
     return 0;
 }
-
-
 
 // ===== 15.3: Working with Pointers  =======
 #include <stdio.h>
@@ -704,7 +695,6 @@ int main()
     return 0;
 }
 
-
 // ===== 15.4: Pointers & Array  =======
 #include <stdio.h>
 
@@ -716,7 +706,7 @@ int main()
 
     printf("%d %d %d %d\n", p, &arr, &arr[1], &arr[2]);
 
-    printf("%d %d \n", (p+1), (p+3));
+    printf("%d %d \n", (p + 1), (p + 3));
 
     char a = 'a';
 
@@ -742,11 +732,7 @@ int main()
     return 0;
 }
 
-
-
 // ===== 15.5: Dynamic Array in C  =======
-
-
 
 // ===== 15.6: Implementing Dynamic Array  =======
 #include <stdio.h>
@@ -794,17 +780,14 @@ int main()
 details in example:
 https://chatgpt.com/c/6724b2bc-db4c-8007-a096-780032392602
 
-*/ 
-
+*/
 
 // ===== 15.7: Pointers Of Pointer  =======
-
-
 
 /***********************
  ******* Week04 ********
  ***** Concept-02 ******
- **********************/ 
+ **********************/
 
 // ----------- Example-1:
 #include <stdio.h>
@@ -841,7 +824,6 @@ int main()
     printf("pch = %c \n", *pch);
 
     printf("pch er size = %d \n", sizeof(pch));
-
 }
 
 // ----------- Example-2:
@@ -901,7 +883,7 @@ int main()
 
 int main()
 {
-    
+
     // Static array:
     // int n;
     // int *ptr = &n;
@@ -968,11 +950,10 @@ int main()
     return 0;
 }
 
-
 /***********************
  ******* Week04 ********
  *** Practice Day-02 ***
- **********************/ 
+ **********************/
 
 // 1. Add: https://codeforces.com/group/MWSDmqGsZm/contest/223205/problem/A
 #include <stdio.h>
@@ -1020,24 +1001,8 @@ int main()
 
 // 3. Min & Max: https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/K
 
-
-
-
-
-
-
-
 /***********************
  ******* Week04 ********
  ***** Assignment-3 ****
  problem Explain link: https://chatgpt.com/c/67258970-fce0-8007-bf09-748f9cee2bf0
- **********************/ 
-
-
-
-
-
-
-
-
-
+ **********************/

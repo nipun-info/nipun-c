@@ -48,7 +48,7 @@ int main()
     return 0;
 }
 
-//  unique string
+//  unique string & count total string
 #include <stdio.h>
 #include <string.h>
 
@@ -113,7 +113,6 @@ int main()
     return 0;
 }
 
-
 // Summary of module 14
 // Input Output of 2D Matrix
 #include <stdio.h>
@@ -147,7 +146,6 @@ int main()
 
     return 0;
 }
-
 
 // Checking a Scaler Matrix
 #include <stdio.h>
@@ -210,3 +208,107 @@ int main()
 }
 
 // Matrix CF : absolute difference between the summation of its two diagonals (primary diagonal and secondary diagonal)
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    int matrix[n][n];
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    int main_diagonal = 0, sec_diagonal = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i == j)
+            {
+                main_diagonal += matrix[i][j];
+            }
+
+            if (i + j == n - 1)
+            {
+                sec_diagonal += matrix[i][j];
+            }
+        }
+    }
+
+    int diff = abs(main_diagonal - sec_diagonal);
+
+    printf("%d\n", diff);
+
+    return 0;
+}
+
+// 😕 Conceptual Session: W-4-1 😕
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    char str[n + 5];
+    scanf("%s", str);
+
+    int freq[26] = {0};
+    for (int i = 0; i < n; i++)
+    {
+        int index = str[i] - 'a';
+        freq[index]++;
+    }
+
+    for (int i = 0; i < 26; i++)
+    {
+        if (freq[i] != 0)
+            printf("%c %d\n", i + 'a', freq[i]);
+    }
+
+    return 0;
+}
+
+/*
+Input:
+10
+abcabbace
+*/
+
+#include <stdio.h>
+
+int main()
+{
+    int r, c;
+    scanf("%d %d", &r, &c);
+    int a[r][c], b[r][c], sum[r][c];
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
