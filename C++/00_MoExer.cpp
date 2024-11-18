@@ -1,7 +1,7 @@
 
-/*
-    🪴🪴🪴🪴 MO-1: Basic C++ 🪴🪴🪴🪴
-*/
+/******************************************************
+🪴🪴🪴🪴 MO-1: Basic C++ 🪴🪴🪴🪴
+*******************************************************/
 
 // 🪂🪂🪂🪂 Welcome to C++ For DSA
 
@@ -225,3 +225,213 @@ int main()
 // 🪂🪂🪂🪂 Summary and bits header file
 #include<bits/stdc++.h>
 
+
+
+/******************************************************
+🪴🪴🪴🪴 MO-2: Dynamic Memory Allocation 🪴🪴🪴🪴
+*******************************************************/
+
+// 🪂🪂 Static vs Dynamic Memory 🪂🪂 
+
+/*
+https://chatgpt.com/c/673b1bd2-51c4-8007-b49b-94d4a9eb28f9
+    Stack               |   Heap
+    Static              |   Dyanamic
+    Compile Time        |   Run Time
+    Limited Memory      |   More Memory
+    Auto memory clear   |   User Instructed
+
+*/ 
+
+
+
+
+// 🪂🪂 Dynamic Variable 🪂🪂 
+// ----------- Example-01
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    // Allocate memory for an integer
+    int *p = new int;
+
+    // Assign a value to the allocated memory
+    *p = 100;
+
+    cout << * p << endl;
+
+    // Free the allocated memory
+    delete p;
+
+    return 0;
+}
+
+// ----------- Example-02
+#include<bits/stdc++.h>
+using namespace std;
+
+int* p;
+
+void func()
+{
+    // Static variable
+    // int x = 10;
+    // p = &x;
+    // cout << "Fun -> " << *p << endl;
+
+    // Dynamic variable
+    int* x = new int;
+    *x  = 100;
+    p = x;
+    cout << "Fun -> " << *p << endl;
+}
+
+
+int main()
+{
+    func();
+
+    cout << "Main -> " << *p << endl;
+
+    return 0;
+}
+
+
+// 🪂🪂 Dynamic Array 🪂🪂 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    // allocate menory for an array of intergers
+    int *a = new int[5];
+
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> a[i];
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << a[i] << " ";
+    }
+
+    // Free the allocated memory
+    delete[] a;
+
+    return 0;
+}
+
+
+// 🪂🪂 Dynamic Array Return From Function 🪂🪂 
+#include <bits/stdc++.h>
+using namespace std;
+
+int *func1()
+{
+    int *a = new int[5];
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> a[i];
+    }
+
+    return a;
+}
+
+int main()
+{
+    int *x = func1();
+    for (int i = 0; i < 5; i++)
+    {
+        cout << x[i] << "\n";
+    }
+
+    return 0;
+}
+
+
+// 🪂🪂 Increase Size of Dynamic Array 🪂🪂 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    // int a[3];
+    // int b[5];
+
+    int *a = new int[3];
+    int *b = new int[5];
+
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> a[i];
+    }
+
+    for (int i = 0; i < 3; i++)
+    {
+        b[i] = a[i];
+    }
+
+    b[3] = 90;
+    b[4] = 200;
+
+    delete[] a;
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << b[i] << " " << endl;
+    }
+
+    return 0;
+}
+
+
+// 🪂🪂 Summary 🪂🪂 
+
+// Search snippet generator: https://snippet-generator.app/
+// Select VSCode and input code and copied 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    return 0;
+}
+// go to setting snippet and paste the code and save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************************************
+🪴🪴🪴🪴 MO-3: Dynamic Memory Allocation 🪴🪴🪴🪴
+*******************************************************/
