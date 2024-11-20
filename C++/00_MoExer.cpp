@@ -114,14 +114,10 @@ int main()
     int x;
     cin >> x;
 
-    x%2==0? cout << "Even\n" : cout << "Odd\n";
+    x % 2 == 0 ? cout << "Even\n" : cout << "Odd\n";
 
     return 0;
 }
-
-
-
-
 
 // 🪂🪂🪂🪂 Switch in C++
 
@@ -133,7 +129,7 @@ using namespace std;
 
 int main()
 {
-    int a,b;
+    int a, b;
     cin >> a >> b;
 
     // if(a < b)
@@ -148,13 +144,13 @@ int main()
     cout << min(a, b) << endl;
 
     // find max number of two numbers
-    cout << max(a,b) << endl;
+    cout << max(a, b) << endl;
 
     // find minimum number of multiple numbers
-    cout << min({3,5,8,9,75}) << endl;
+    cout << min({3, 5, 8, 9, 75}) << endl;
 
     // find maximum number of multiple numbers
-    cout << max({3,5,8,9,75}) << endl;
+    cout << max({3, 5, 8, 9, 75}) << endl;
 
     return 0;
 }
@@ -173,13 +169,12 @@ int main()
     // a = b;
     // b = temp;
 
-    swap(a,b);
+    swap(a, b);
 
     cout << a << " " << b << endl;
 
     return 0;
 }
-
 
 // 🪂🪂🪂🪂 String in C++
 #include <iostream>
@@ -190,11 +185,10 @@ int main()
     char s[100];
 
     cin >> s;
-    cout << s << endl;  // print: Hello
+    cout << s << endl; // print: Hello
 
-    cin.getline(s, 100);   
-    cout << s << endl;      // print: Hello world 
-
+    cin.getline(s, 100);
+    cout << s << endl; // print: Hello world
 
     return 0;
 }
@@ -215,23 +209,20 @@ int main()
 
     cin.getline(s, 100);
 
-    cout << x << endl << s << endl;
-
+    cout << x << endl
+         << s << endl;
 
     return 0;
 }
 
-
 // 🪂🪂🪂🪂 Summary and bits header file
-#include<bits/stdc++.h>
-
-
+#include <bits/stdc++.h>
 
 /******************************************************
 🪴🪴🪴🪴 MO-2: Dynamic Memory Allocation 🪴🪴🪴🪴
 *******************************************************/
 
-// 🪂🪂 Static vs Dynamic Memory 🪂🪂 
+// 🪂🪂 Static vs Dynamic Memory 🪂🪂
 
 /*
 https://chatgpt.com/c/673b1bd2-51c4-8007-b49b-94d4a9eb28f9
@@ -241,14 +232,11 @@ https://chatgpt.com/c/673b1bd2-51c4-8007-b49b-94d4a9eb28f9
     Limited Memory      |   More Memory
     Auto memory clear   |   User Instructed
 
-*/ 
+*/
 
-
-
-
-// 🪂🪂 Dynamic Variable 🪂🪂 
+// 🪂🪂 Dynamic Variable 🪂🪂
 // ----------- Example-01
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -258,7 +246,7 @@ int main()
     // Assign a value to the allocated memory
     *p = 100;
 
-    cout << * p << endl;
+    cout << *p << endl;
 
     // Free the allocated memory
     delete p;
@@ -267,10 +255,10 @@ int main()
 }
 
 // ----------- Example-02
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int* p;
+int *p;
 
 void func()
 {
@@ -280,12 +268,11 @@ void func()
     // cout << "Fun -> " << *p << endl;
 
     // Dynamic variable
-    int* x = new int;
-    *x  = 100;
+    int *x = new int;
+    *x = 100;
     p = x;
     cout << "Fun -> " << *p << endl;
 }
-
 
 int main()
 {
@@ -296,8 +283,7 @@ int main()
     return 0;
 }
 
-
-// 🪂🪂 Dynamic Array 🪂🪂 
+// 🪂🪂 Dynamic Array 🪂🪂
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -323,8 +309,7 @@ int main()
     return 0;
 }
 
-
-// 🪂🪂 Dynamic Array Return From Function 🪂🪂 
+// 🪂🪂 Dynamic Array Return From Function 🪂🪂
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -350,8 +335,7 @@ int main()
     return 0;
 }
 
-
-// 🪂🪂 Increase Size of Dynamic Array 🪂🪂 
+// 🪂🪂 Increase Size of Dynamic Array 🪂🪂
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -386,11 +370,10 @@ int main()
     return 0;
 }
 
-
-// 🪂🪂 Summary 🪂🪂 
+// 🪂🪂 Summary 🪂🪂
 
 // Search snippet generator: https://snippet-generator.app/
-// Select VSCode and input code and copied 
+// Select VSCode and input code and copied
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -400,6 +383,279 @@ int main()
     return 0;
 }
 // go to setting snippet and paste the code and save
+
+/******************************************************
+🪴🪴🪴🪴 MO-2:5: Practice Day 🪴🪴🪴🪴
+*******************************************************/
+/*
+    M. Capital or Small or Digit: Given a letter X. Determine whether X is Digit or Alphabet and if it is Alphabet determine if it is Capital Case or Small Case.
+    https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/M
+*/
+
+/*
+    C. Simple Calculator: Given two numbers X and Y. Print the summation and multiplication and subtraction of these 2 numbers.
+    https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/C
+*/
+
+/*
+    F. Reversing (solve using swap() function): Given a number N and an array A of N numbers. Print the array in a reversed order.
+    https://codeforces.com/group/MWSDmqGsZm/contest/219774/problem/F
+*/
+
+/*
+    K. Max and Min : Given 3 numbers A, B and C, Print the minimum and the maximum numbers.
+    https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/K
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    int minimum = min({a, b, c});
+    int maximum = max({a, b, c});
+
+    cout << minimum << " " << maximum << endl;
+
+    return 0;
+}
+
+/*
+    E. Max (solve using max() function):Given a number N, and N numbers, find maximum number in these N numbers.
+    https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/E
+
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    int a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    int mx = INT_MIN;
+    for (int i = 0; i < n; i++)
+    {
+        // if (a[i] > max)
+        //     max = a[i];
+
+        mx = max(a[i], mx);
+    }
+
+    cout << mx << endl;
+
+    return 0;
+}
+
+/******************************************************
+🪴🪴🪴🪴 MO-3: Class and Object in C++ 🪴🪴🪴🪴
+*******************************************************/
+// 🪂🪂 What is Class and Object 🪂🪂
+
+// 🪂🪂 How to declare class and object 🪂🪂
+
+// 🪂🪂 Working with class and object 🪂🪂
+// --------Example-1:
+#include <bits/stdc++.h>
+using namespace std;
+class Student
+{
+public:
+    char name[100];
+    int roll;
+    double gpa;
+};
+
+int main()
+{
+    // Student a;
+    // a.roll = 20;
+    // a.gpa = 4.5;
+    // char temp[100] = "robin";
+    // strcpy(a.name, temp);
+
+    // cout << a.name << " " << a.roll << " " << a.gpa << endl;
+
+    return 0;
+}
+
+/*
+example-2:
+input:
+nahid 99 4.58
+habib 74 4.98
+
+*/ 
+#include <bits/stdc++.h>
+using namespace std;
+class Student
+{
+    public:
+    char name[100];
+    int roll;
+    double gpa;
+};
+
+int main()
+{
+    // Student a, b;
+    // cin >> a.name >> a.roll >> a.gpa;
+    // cin >> b.name >> b.roll >> b.gpa;
+    
+    // cout << a.name << " " << a.roll << " " << a.gpa << endl;
+    // cout << b.name << " " << b.roll << " " << b.gpa << endl;
+
+    return 0;
+}
+
+
+
+// 🪂🪂 Constructor and its Simulation 🪂🪂
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+public:
+    int roll;
+    int cls;
+    double gpa;
+
+    Student(int r, int c, double g)
+    {
+        roll = r;
+        cls = c;
+        gpa = g;
+    }
+};
+
+int main()
+{
+    Student rahim(45, 5, 3.2);
+    Student karim(2, 8, 4.2);
+
+    cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
+    cout << karim.roll << " " << karim.cls << " " << karim.gpa << endl;
+
+    return 0;
+}
+
+// 🪂🪂 This keyword and Arrow sign 🪂🪂
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+public:
+    int roll;
+    int cls;
+    double gpa;
+
+    Student(int roll, int cls, double gpa)
+    {
+        // this->roll = roll;
+        // this->cls = cls;
+        // this->gpa = gpa;
+
+        (*this).roll = roll;
+        (*this).cls = cls;
+        (*this).gpa = gpa;
+    }
+};
+
+int main()
+{
+    Student rahim(40, 5, 3.2);
+    Student karim(2, 8, 4.2);
+
+    cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
+    cout << karim.roll << " " << karim.cls << " " << karim.gpa << endl;
+
+    return 0;
+}
+
+// 🪂🪂 Return object from function 🪂🪂
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+public:
+    int roll;
+    int cls;
+    double gpa;
+
+    Student(int roll, int cls, double gpa)
+    {
+        this->roll = roll;
+        this->cls = cls;
+        this->gpa = gpa;
+    }
+};
+
+Student fun()
+{
+    Student rahim(40, 5, 3.2);
+    return rahim;
+}
+
+int main()
+{
+    Student obj = fun();
+    cout << obj.roll << " " << obj.cls << " " << obj.gpa << endl;
+
+    return 0;
+}
+
+// 🪂🪂 Why we need dynamic object 🪂🪂
+// Below code return garbase value
+#include <bits/stdc++.h>
+using namespace std;
+
+class Student
+{
+public:
+    int roll;
+    int cls;
+    double gpa;
+
+    Student(int roll, int cls, double gpa)
+    {
+        this->roll = roll;
+        this->cls = cls;
+        this->gpa = gpa;
+    }
+};
+
+Student* fun2()
+{
+    Student rahim(40, 5, 5.0);
+    Student* p = &rahim;
+    return p;
+}
+
+int main()
+{
+    Student* p = fun();
+    cout << p->roll << " " << p->cls << " " << p->gpa << endl;
+
+    return 0;
+}
+// 🪂🪂 Dynamic Object 🪂🪂
+
+// 🪂🪂 Sort function in C++ 🪂🪂
+
+
+
+
 
 
 

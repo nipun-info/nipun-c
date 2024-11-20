@@ -312,3 +312,77 @@ int main()
 
     return 0;
 }
+
+
+// Summary of module 15
+// swaping value  using pointer
+
+#include <stdio.h>
+
+int main()
+{
+    int a = 10;
+    int b = 20;
+
+    int *x = &a;
+    int *y = &b;
+
+    printf("%d %d\n", a, b);
+
+    // deferanceing
+
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+
+    printf("%d %d\n", a, b);
+
+
+    return 0;
+}
+
+// Dynamic array example
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int *arr = malloc(5 * sizeof(int));
+
+    for (int i = 0; i < 5; i++)
+    {
+        arr[i] = i + 1;
+    }
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    printf("\n");
+
+    int *temp = arr;
+
+    arr = realloc(arr, 10 * sizeof(int));
+
+    if (arr == NULL)
+    {
+        arr = temp;
+    }
+
+    for (int i = 5; i < 10; i++)
+    {
+        arr[i] = i + 1;
+    }
+
+    for (int i = 1; i < 10; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    free(arr);
+
+    return 0;
+}
+
+
