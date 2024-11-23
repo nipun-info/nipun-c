@@ -16,19 +16,25 @@ class Student
     }
 };
 
+
+
 int main()
 {
-    Student rahim(45, 5, 3.2);
+    Student rahim(50, 5, 3.2);
 
-    cout << rahim.roll << " " << rahim.cls << " " << rahim.gpa << endl;
-    
+    cout << rahim.roll <<  " " << rahim.cls << " " << rahim.gpa << endl;
+
     return 0;
+
 }
 
 
 
 
 
-/*  (1️⃣2️⃣3️⃣4️⃣5️⃣)
-    03:00pm - 11:55pm = 50@min X 05@times(2️⃣3️⃣4️⃣5️⃣)
+/*(1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🔟)
+   
+    6️⃣AM - 🔟AM = 3️⃣H
+    3️⃣PM - 8️⃣PM = 3️⃣H
+
 */
